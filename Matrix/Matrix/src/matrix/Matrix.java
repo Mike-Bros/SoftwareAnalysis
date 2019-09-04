@@ -176,7 +176,13 @@ public interface Matrix {
      * from left to right.
      */
     default void fillRowWise() {
-        // You must provide
+        int k = 1;
+        for(int i=0;i<getNumRows();i++){
+            for(int j=0;j<getNumColumns();j++){
+                set(i,j,i+j+k);
+            }
+            k+= getNumColumns()-1;
+        }
     }
     
     /**
@@ -185,7 +191,14 @@ public interface Matrix {
      * from top to bottom.
      */
     default void fillColumnWise() {
-        // You must provide
+        //currently doing the same thing as fillRowWise()
+        int k = 1;
+        for(int i=0;i<getNumColumns();i++){
+            for(int j=0;j<getNumRows();j++){
+                set(i,j,i+j+k);
+            }
+            k+= getNumRows()-1;
+        }
     }
 
 }
