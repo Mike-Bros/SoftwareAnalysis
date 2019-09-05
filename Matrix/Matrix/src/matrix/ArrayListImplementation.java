@@ -61,5 +61,5 @@ public class ArrayListImplementation extends AbstractMatrix {
         elements.get(row).set(column, element);
     }
     
-    private List<List<Integer>> elements;   
+    private List<List<Integer>> elements;
 }
