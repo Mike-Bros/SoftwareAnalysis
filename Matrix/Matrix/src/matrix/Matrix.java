@@ -157,7 +157,30 @@ public interface Matrix {
      * @return the transpose of this matrix 
      */
     default Matrix transpose() {
-        // You must provide
+        int col = getNumColumns();
+        int row = getNumRows();
+        int[] valueArray = new int[col*row];
+        
+        for(int i=0;i<row;i++){
+            for(int j=0;j<row;j++){
+                valueArray[i+j] = get(i,j);
+            }
+        }
+        
+        //Change this matrix to the new size
+        setNumColumns(row);
+        setNumRows(col);
+        
+        
+        
+        int k = 1;
+        for(int i=0;i<getNumColumns();i++){
+            for(int j=0;j<getNumRows();j++){
+                set(j,i,valueArray[i+j+k]);
+            }
+            k+= getNumRows()-1;
+        }
+        
         return this;
     }
     
@@ -167,7 +190,10 @@ public interface Matrix {
      * dimensions
      */
     default void makeIdentity() {
-        // You must provide
+        clear();
+        for(int i=0;i<getNumRows();i++){
+            set(i,i,1);
+        }
     }
     
     /**
@@ -191,11 +217,10 @@ public interface Matrix {
      * from top to bottom.
      */
     default void fillColumnWise() {
-        //currently doing the same thing as fillRowWise()
         int k = 1;
         for(int i=0;i<getNumColumns();i++){
             for(int j=0;j<getNumRows();j++){
-                set(i,j,i+j+k);
+                set(j,i,i+j+k);
             }
             k+= getNumRows()-1;
         }
