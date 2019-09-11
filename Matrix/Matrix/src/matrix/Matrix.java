@@ -159,29 +159,18 @@ public interface Matrix {
     default Matrix transpose() {
         int col = getNumColumns();
         int row = getNumRows();
-        int[] valueArray = new int[col*row];
         
-        for(int i=0;i<row;i++){
-            for(int j=0;j<row;j++){
-                valueArray[i+j] = get(i,j);
-            }
-        }
+        //Make a matrix to transpose to
+        Matrix newMatrix = create(col,row);
         
-        //Change this matrix to the new size
-        setNumColumns(row);
-        setNumRows(col);
-        
-        
-        
-        int k = 1;
+        //Set newMatrix to inverted values of this
         for(int i=0;i<getNumColumns();i++){
             for(int j=0;j<getNumRows();j++){
-                set(j,i,valueArray[i+j+k]);
+                newMatrix.set(i,j,this.get(j,i));
             }
-            k+= getNumRows()-1;
         }
-        
-        return this;
+
+        return newMatrix;
     }
     
     /**

@@ -11,8 +11,11 @@ public class MatrixTest {
     
     public MatrixTest() {
         m3x2 = Matrix.create(3, 2);
+        m3x2_ = Matrix.create(3, 2);
         m2x3 = Matrix.create(2, 3);
+        m2x3_ = Matrix.create(2, 3);
         m3x3 = Matrix.create(3, 3);
+        m3x3_ = Matrix.create(3,8);
     }
 
     @Test
@@ -138,7 +141,64 @@ public class MatrixTest {
      */
     @Test
     public void testEquals() {
-	// You must provide
+        //1.
+        m3x3.fillRowWise();
+        m2x3.fillRowWise();
+        m3x2.fillRowWise();
+        assertTrue(m3x3.equals(m3x3));
+        assertTrue(m3x2.equals(m3x2));
+        assertTrue(m2x3.equals(m2x3));
+        //2.
+        assertTrue(!m3x3.equals(m3x2));
+        assertTrue(!m3x3.equals(m2x3));
+        assertTrue(!m2x3.equals(m3x3));
+        assertTrue(!m2x3.equals(m3x2));
+        assertTrue(!m3x2.equals(m2x3));
+        assertTrue(!m3x2.equals(m3x2));
+        //3.
+        m3x3.clear();
+        m3x3_.clear();
+        m3x2.clear();
+        m3x2_.clear();
+        m2x3.clear();
+        m2x3_.clear();
+        assertTrue(m3x3.equals(m3x3_));
+        assertTrue(m3x3_.equals(m3x3));
+        assertTrue(m3x2.equals(m3x2_));
+        assertTrue(m3x2_.equals(m3x2));
+        assertTrue(m2x3.equals(m2x3_));
+        assertTrue(m2x3_.equals(m2x3));
+        //4.
+        m3x3.fillRowWise();
+        m3x3_.fillRowWise();
+        m2x3.fillRowWise();
+        m2x3_.fillRowWise();
+        m3x2.fillRowWise();
+        m3x2_.fillRowWise();
+        assertTrue(m3x3.equals(m3x3_));
+        assertTrue(m3x3_.equals(m3x3));
+        assertTrue(m3x2.equals(m3x2_));
+        assertTrue(m3x2_.equals(m3x2));
+        assertTrue(m2x3.equals(m2x3_));
+        assertTrue(m2x3_.equals(m2x3));
+        //5.
+        m3x3.fillRowWise();
+        m3x3.set(1,1,5);
+        m3x3_.fillRowWise();
+        m2x3.fillRowWise();
+        m2x3.set(1,1,5);
+        m2x3_.fillRowWise();
+        assertTrue(!m3x3.equals(m3x3_));
+        assertTrue(!m3x3_.equals(m3x3));
+        assertTrue(!m3x2.equals(m3x2_));
+        assertTrue(!m3x2_.equals(m3x2));
+        //6. 
+        m3x3.fillRowWise();
+        m2x3.fillRowWise();
+        m3x2.fillRowWise();
+        assertTrue(m3x3.equals(m3x3.transpose().transpose()));
+        assertTrue(m3x2.equals(m3x2.transpose().transpose()));
+        assertTrue(m2x3.equals(m2x3.transpose().transpose()));
     }
     
     /**
@@ -169,7 +229,10 @@ public class MatrixTest {
 	// You must provide
     }
     
-    private final Matrix m3x2;
+    private Matrix m3x2;
+    private Matrix m3x2_;
     private Matrix m2x3;
+    private Matrix m2x3_;
     private Matrix m3x3;
+    private Matrix m3x3_;
 }
