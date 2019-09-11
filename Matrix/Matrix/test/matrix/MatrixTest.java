@@ -154,7 +154,7 @@ public class MatrixTest {
         assertTrue(!m2x3.equals(m3x3));
         assertTrue(!m2x3.equals(m3x2));
         assertTrue(!m3x2.equals(m2x3));
-        assertTrue(!m3x2.equals(m3x2));
+        assertTrue(!m3x2.equals(m3x3));
         //3.
         m3x3.clear();
         m3x3_.clear();

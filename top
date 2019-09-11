@@ -1,0 +1,47 @@
+[33mcommit f5081f8df7e2ffeb30b9af150448ceed30ab4817[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Mike Bros <bros21@gmail.com>
+Date:   Wed Sep 11 13:27:11 2019 -0500
+
+    Matrix control finished with transpose implemented. Test for equals is also completed.
+
+[33mcommit ad7d895d8ad7eb1b21d1b80c351ad19fbb3ecb29[m
+Author: Mike Bros <bros21@gmail.com>
+Date:   Wed Sep 11 12:26:50 2019 -0500
+
+    Lab 3 complete, might need to tweak sequence diagram before submitting so there may be minor changes later
+
+[33mcommit 646849fe72294f751575d5043d1a7834f81850ae[m
+Author: Mike Bros <bros21@gmail.com>
+Date:   Wed Sep 11 11:45:17 2019 -0500
+
+    MatrixControl is done except for transpose. Still need to implement operations
+
+[33mcommit 1856eed5d9ebd6155ccc33a32e6ba61d769688eb[m
+Author: Mike Bros <mb@rmbros.net>
+Date:   Tue Sep 10 21:10:24 2019 -0500
+
+    Added a folder for labs and violet for UML. Class diagram is complete for lab 3 still need sequence.
+
+[33mcommit e44f2932c17ceabbafe84de3dee0512af2898aca[m
+Author: Mike Bros <mb@rmbros.net>
+Date:   Wed Sep 4 23:28:50 2019 -0500
+
+    Unsure what changed really
+
+[33mcommit f6d23335196cb7be0d7ebc8bfb5cec36ac7391bb[m
+Author: Mike Bros <mb@rmbros.net>
+Date:   Wed Sep 4 15:24:05 2019 -0500
+
+    Fill Row-Wise is implemented, Column-Wise is under construction
+
+[33mcommit 68a95d4db2b3770c8e260a3916cd081aae3e8424[m
+Author: Mike Bros <mb@rmbros.net>
+Date:   Wed Sep 4 14:54:56 2019 -0500
+
+    Made src.zip for submission
+
+[33mcommit c13592957d2dbbf122f526b76ebd857840df85f3[m
+Author: Mike Bros <mb@rmbros.net>
+Date:   Wed Sep 4 14:41:07 2019 -0500
+
+    Init commit with console and matric projects

@@ -86,10 +86,19 @@ public abstract class AbstractMatrix implements Matrix {
      * @return <b>true</b> if the other matrix is equal to this matrix,
      * <b>false</b> otherwise
      */
-    @Override
-    public boolean equals(Object obj) {
-        // You must provide
-        return false;
+   
+    public boolean equals(Matrix obj) {
+        if(obj.getNumRows() == this.getNumRows() && obj.getNumColumns() == this.getNumColumns()){
+            for(int i=0;i<getNumColumns();i++){
+                for(int j=0;j<getNumRows();j++){
+                    if(obj.get(i,j) != this.get(i,j)){
+                        return false;
+                    }
+                }
+            }
+        }
+            
+        return true;
     }
 
     /**
