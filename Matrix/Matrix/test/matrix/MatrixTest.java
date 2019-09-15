@@ -212,7 +212,14 @@ public class MatrixTest {
      */
     @Test
     public void testAdd() {
-	// You must provide
+	//1.
+        m3x2.fillColumnWise(); //1 4
+                               //2 5
+                               //3 6
+        m3x3.fillColumnWise(); //1 4 7
+                               //2 5 8
+                               //3 6 9
+        m3x3.add(m3x2);
     }
     
     /**

@@ -79,7 +79,7 @@ public abstract class AbstractMatrix implements Matrix {
      * Tests for equality of this matrix with another. Matrices are equal if
      * they have the same dimensions and all elements are equal by ==. This is a
      * template method; it uses a method (get) that must be implemented by a
-     * subclass. This method overrides a method in the Object class, so it must
+     * subclass. This method overrides a method in the Object c=lass, so it must
      * type check and cast its argument to the correct type.
      *
      * @param obj the other matrix to be tested for equality with this matrix
@@ -87,7 +87,11 @@ public abstract class AbstractMatrix implements Matrix {
      * <b>false</b> otherwise
      */
    
-    public boolean equals(Matrix obj) {
+    public boolean equals(Object obj) {
+        if(obj instanceof Matrix){
+            //cast argument to type of Matrix?
+        }
+        /*
         if(obj.getNumRows() == this.getNumRows() && obj.getNumColumns() == this.getNumColumns()){
             for(int i=0;i<getNumColumns();i++){
                 for(int j=0;j<getNumRows();j++){
@@ -97,7 +101,7 @@ public abstract class AbstractMatrix implements Matrix {
                 }
             }
         }
-            
+        */
         return true;
     }
 
