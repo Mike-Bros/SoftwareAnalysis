@@ -12,10 +12,13 @@ public class MatrixTest {
     public MatrixTest() {
         m3x2 = Matrix.create(3, 2);
         m3x2_ = Matrix.create(3, 2);
+        m3x2_t = Matrix.create(3, 2);
         m2x3 = Matrix.create(2, 3);
         m2x3_ = Matrix.create(2, 3);
+        m2x3_t = Matrix.create(2, 3);
         m3x3 = Matrix.create(3, 3);
-        m3x3_ = Matrix.create(3,8);
+        m3x3_ = Matrix.create(3, 3);
+        m3x3_t = Matrix.create(3, 3);
     }
 
     @Test
@@ -183,15 +186,15 @@ public class MatrixTest {
         assertTrue(m2x3_.equals(m2x3));
         //5.
         m3x3.fillRowWise();
-        m3x3.set(1,1,5);
+        m3x3.set(1,1,255);
         m3x3_.fillRowWise();
         m2x3.fillRowWise();
-        m2x3.set(1,1,5);
+        m2x3.set(1,1,255);
         m2x3_.fillRowWise();
         assertTrue(!m3x3.equals(m3x3_));
         assertTrue(!m3x3_.equals(m3x3));
-        assertTrue(!m3x2.equals(m3x2_));
-        assertTrue(!m3x2_.equals(m3x2));
+        assertTrue(!m2x3.equals(m2x3_));
+        assertTrue(!m2x3_.equals(m2x3));
         //6. 
         m3x3.fillRowWise();
         m2x3.fillRowWise();
@@ -219,7 +222,42 @@ public class MatrixTest {
         m3x3.fillColumnWise(); //1 4 7
                                //2 5 8
                                //3 6 9
-        m3x3.add(m3x2);
+        try{
+            m3x3.add(m3x2);
+        }catch(Exception e){
+            assertTrue(true);
+        }
+        
+        //2.
+        m3x3.clear();
+        m3x3_.clear();
+        m3x3_t.clear();
+        assertTrue(m3x3.add(m3x3_).equals(m3x3_t));
+        
+        m3x2.clear();
+        m3x2_.clear();
+        m3x2_t.clear();
+        assertTrue(m3x2.add(m3x2_).equals(m3x2_t));
+        
+        m2x3.clear();
+        m2x3_.clear();
+        m2x3_t.clear();
+        assertTrue(m2x3.add(m2x3_).equals(m2x3_t));
+        
+        //2.
+        m3x3.fillRowWise();
+        m3x3_.fillRowWise();
+        m3x3_t.set(0, 0, 2);   m3x3_t.set(0, 1, 4);   m3x3_t.set(0, 2, 6);   // 2  4  6
+        m3x3_t.set(1, 0, 8);   m3x3_t.set(1, 1, 10);  m3x3_t.set(1, 2, 12);  // 8  10 12
+        m3x3_t.set(2, 0, 14);  m3x3_t.set(2, 1, 16);  m3x3_t.set(2, 2, 18);  // 14 16 18
+        assertTrue(m3x3.add(m3x3_).equals(m3x3_t));
+        
+        m3x2.fillRowWise();
+        m3x2_.fillRowWise();
+        m3x2_t.set(0, 0, 2);   m3x2_t.set(0, 1, 4);  // 2  4
+        m3x2_t.set(1, 0, 6);   m3x2_t.set(1, 1, 8); // 6  8
+        m3x2_t.set(2, 0, 10);  m3x2_t.set(2, 1, 12); // 10 12
+        assertTrue(m3x2.add(m3x2_).equals(m3x2_t));
     }
     
     /**
@@ -233,13 +271,16 @@ public class MatrixTest {
      */
     @Test
     public void testMultiply() {
-	// You must provide
+	//1.
     }
     
     private Matrix m3x2;
     private Matrix m3x2_;
+    private Matrix m3x2_t;
     private Matrix m2x3;
     private Matrix m2x3_;
+    private Matrix m2x3_t;
     private Matrix m3x3;
     private Matrix m3x3_;
+    private Matrix m3x3_t;
 }

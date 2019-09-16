@@ -1,5 +1,7 @@
 package matrix;
 
+import static matrix.Matrix.create;
+
 /**
  * This abstract class partially implements the Matrix API.
  * Only the number of rows and columns are stored. A subclass
@@ -89,19 +91,22 @@ public abstract class AbstractMatrix implements Matrix {
    
     public boolean equals(Object obj) {
         if(obj instanceof Matrix){
-            //cast argument to type of Matrix?
-        }
-        /*
-        if(obj.getNumRows() == this.getNumRows() && obj.getNumColumns() == this.getNumColumns()){
-            for(int i=0;i<getNumColumns();i++){
-                for(int j=0;j<getNumRows();j++){
-                    if(obj.get(i,j) != this.get(i,j)){
-                        return false;
+            Matrix obj2 = (Matrix) obj;
+            
+            if((obj2.getNumRows() == this.getNumRows()) && (obj2.getNumColumns() == this.getNumColumns())){
+                for(int i=0;i<this.getNumColumns();i++){
+                    for(int j=0;j<this.getNumRows();j++){
+                        if(obj2.get(j,i) != this.get(j,i)){
+                            return false;
+                        }
                     }
                 }
+            }else{
+                return false;
             }
+        }else{
+            throw new MatrixException("Equals was pased an object that is not a Matrix");
         }
-        */
         return true;
     }
 
@@ -114,8 +119,18 @@ public abstract class AbstractMatrix implements Matrix {
      */
     @Override
     public Matrix add(Matrix other) {
-        // You must provide
-        return this;
+        Matrix newMatrix = create(getNumRows(),getNumColumns());
+        
+        if ((other.getNumRows() != this.getNumRows()) || (other.getNumColumns() != this.getNumColumns())) {
+            throw new MatrixException("Matrices must be same dimensions to add");
+        }
+        
+        for(int i=0;i<this.getNumColumns();i++){
+            for(int j=0;j<this.getNumRows();j++){
+                newMatrix.set(j, i, other.get(j,i)+this.get(j,i));
+            }
+        }
+        return newMatrix;
     }
 
     /**
@@ -127,8 +142,18 @@ public abstract class AbstractMatrix implements Matrix {
      */
     @Override
     public Matrix multiply(Matrix other) {
-        // You must provide
-        return this;
+        Matrix newMatrix = create(getNumRows(),getNumColumns());
+        
+        if (other.getNumColumns() != this.getNumColumns()) {
+            throw new MatrixException("Matrices must be same numColumns to multiply");
+        }
+        
+        for(int i=0;i<this.getNumColumns();i++){
+            for(int j=0;j<this.getNumRows();j++){
+                newMatrix.set(j, i, other.get(j,i)+this.get(j,i));
+            }
+        }
+        return newMatrix;
     }
     
     /**
