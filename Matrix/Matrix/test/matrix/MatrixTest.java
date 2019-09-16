@@ -272,6 +272,43 @@ public class MatrixTest {
     @Test
     public void testMultiply() {
 	//1.
+        try{
+            m3x3.multiply(m2x3);
+        }catch(Exception e){
+            assertTrue(true);
+        }
+        try{
+            m3x2.multiply(m3x2_);
+        }catch(Exception e){
+            assertTrue(true);
+        }
+        try{
+            m3x2.multiply(m3x3);
+        }catch(Exception e){
+            assertTrue(true);
+        }
+        
+        //2.
+        m3x3.fillRowWise();
+        m3x2.fillColumnWise();
+        m3x2_ = m3x3.multiply(m3x2);
+        m3x2_t.set(0, 0, 14);   m3x2_t.set(0, 1, 32);   // 14 32
+        m3x2_t.set(1, 0, 32);   m3x2_t.set(1, 1, 77);  // 32 77
+        m3x2_t.set(2, 0, 50);  m3x2_t.set(2, 1, 122);  // 50 122
+        assertTrue(m3x2_.equals(m3x2_t));
+        
+        m2x3.fillRowWise();
+        m3x3.fillColumnWise();
+        m2x3_ = m2x3.multiply(m3x3);
+        m2x3_t.set(0, 0, 14);   m2x3_t.set(0, 1, 32); m2x3_t.set(0, 2, 50);   // 14 32 50
+        m2x3_t.set(1, 0, 32);   m2x3_t.set(1, 1, 77); m2x3_t.set(1, 2, 122);  // 32 77 122
+        assertTrue(m2x3_.equals(m2x3_t));
+        
+        //3.
+        m3x3.fillRowWise();
+        m3x3_.makeIdentity();
+        m3x3_t = m3x3.multiply(m3x3_);
+        assertTrue(m3x3.equals(m3x3_t));
     }
     
     private Matrix m3x2;

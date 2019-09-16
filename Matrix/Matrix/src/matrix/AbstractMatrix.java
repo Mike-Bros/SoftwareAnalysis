@@ -142,20 +142,39 @@ public abstract class AbstractMatrix implements Matrix {
      */
     @Override
     public Matrix multiply(Matrix other) {
-        Matrix newMatrix = create(getNumRows(),getNumColumns());
+        Matrix newMatrix = create(this.getNumRows(),other.getNumColumns());
+        int temp=0;
         
-        if (other.getNumColumns() != this.getNumColumns()) {
-            throw new MatrixException("Matrices must be same numColumns to multiply");
+        if (this.getNumColumns() != other.getNumRows()) {
+            throw new MatrixException(String.format
+            ("This matrix has (%s) columns, other has (%s) rows. These two values must be equal", 
+            this.getNumColumns(),other.getNumRows()));
         }
         
-        for(int i=0;i<this.getNumColumns();i++){
-            for(int j=0;j<this.getNumRows();j++){
-                newMatrix.set(j, i, other.get(j,i)+this.get(j,i));
+        for(int i=0;i<this.getNumRows();i++){
+            for(int j=0;j<other.getNumColumns();j++){
+                newMatrix.set(i, j, dotProduct(i,j,this,other));
             }
         }
         return newMatrix;
     }
     
+    /**
+     * Dot product of row obj1 and column obj2 other matrix to multiply
+     * @return a new matrix that is the product
+     * @param row the row of obj1 to use in dot product
+     * @param column the column of obj2 to use in dot product
+     * @param obj1 the first matrix
+     * @param obj2 the second matrix
+     * @return the dot product
+     */
+    private int dotProduct(int row, int column, Matrix obj1, Matrix obj2){
+        int product=0;
+        for(int i=0;i<obj1.getNumColumns();i++){
+            product+= obj1.get(row, i)*obj2.get(i, column);
+        }
+        return product;
+    }
     /**
      * Private instance fields follow
      */
