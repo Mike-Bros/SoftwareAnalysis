@@ -22,13 +22,14 @@ public class BankAccount {
      * @param amount the amount to deposit
      * @param user the user making the deposit
      */
-    public void deposit(int amount, BankAccountUser user) {
+    public synchronized void deposit(int amount, BankAccountUser user) {
         int newBalance = balance + amount;
         logView.log("\n" +user.getName()+ " Depositing $" +amount);
         balance = balance + amount;
         logView.log(". Balance = " + balance);
         checkFinished(user);
         assert(balance == newBalance); // should be true if this method is thread-safe
+        user.notifyAll();
     }
     /**
      * Withdraws an amount on behalf of a bank account user.
@@ -39,11 +40,13 @@ public class BankAccount {
      * @param amount the amount to withdraw
      * @param user the user making the withdrawal
      */
-    public void withdraw(int amount, BankAccountUser user) {
+    public synchronized void withdraw (int amount, BankAccountUser user) throws InterruptedException{
         int newBalance = balance - amount;
         logView.log("\n" +user.getName() + " Withdrawing $" + amount);
         if ( amount > balance ) {
-            throw new RuntimeException("\n\nERROR: Amount (" +amount+ ") must not be greater than the balance (" +balance+ ").");
+            while(amount>balance){
+                user.wait();
+            }
         }
         balance = balance - amount;
         logView.log(". Balance = " + balance);
