@@ -20,7 +20,11 @@ public class BankAccountUser extends Thread{
         super(name);
         this.account = account;
         this.transactions = transactions;
+        if(transactions == null){
+            transactionsRemaining = 0;
+        }else{
         transactionsRemaining = transactions.length;
+        }
     }
 
     /**
@@ -35,13 +39,17 @@ public class BankAccountUser extends Thread{
      * Runs the transactions in a loop.
      * When finished, a message is logged.
      */
-    public void run() {
+    public void run(){
         for (int amount : transactions) {
             if (amount > 0) {
                 account.deposit(amount, this);
             }
             else if (amount < 0) {
-                account.withdraw(Math.abs(amount), this);
+                try {
+                    account.withdraw(Math.abs(amount), this);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(BankAccountUser.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
             else {
                 // amount will not be zero
@@ -55,7 +63,20 @@ public class BankAccountUser extends Thread{
         }
     }
     
+    public BankAccount getAccount(){
+        return account;
+    }
+    
+    public void setWaiting(boolean waiting){
+        this.waiting = waiting;
+    }
+    
+    public boolean getWaiting(){
+        return waiting;
+    }
+    
     private final BankAccount account;
     private final int[] transactions;
     private int transactionsRemaining;
+    private boolean waiting = false;
 }

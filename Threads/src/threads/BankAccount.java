@@ -39,14 +39,17 @@ public class BankAccount {
      * Note that an assertion is used to check if this method is thread-safe.
      * @param amount the amount to withdraw
      * @param user the user making the withdrawal
+     * @throws java.lang.InterruptedException
      */
     public synchronized void withdraw (int amount, BankAccountUser user) throws InterruptedException{
         int newBalance = balance - amount;
         logView.log("\n" +user.getName() + " Withdrawing $" + amount);
         if ( amount > balance ) {
             while(amount>balance){
+                user.setWaiting(true);
                 user.wait();
             }
+            user.setWaiting(false);
         }
         balance = balance - amount;
         logView.log(". Balance = " + balance);

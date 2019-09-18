@@ -83,10 +83,12 @@ public class SimulationControl extends VBox {
                     for (BankAccountUser user : users) {
                         user.start();
                     }
+                    parent.start();
                 }
                 catch(Exception ex) {
                     logView.log(ex.getMessage());
                 }
+              
             });
         }
     }
@@ -100,6 +102,7 @@ public class SimulationControl extends VBox {
         for (int i = 0; i < users.length; i++) {
             users[i] = new BankAccountUser("Sibling " + (i+1), account, generateTransactions());
         }
+        parent = new BankAccountRescuer("Rescuer", account, users);
     }
     
     /**
@@ -132,4 +135,6 @@ public class SimulationControl extends VBox {
     private BankAccountUser[] users;
     
     private final double labelWidth = new Text("Transactions per Sibling:").getLayoutBounds().getWidth();
+    
+    private BankAccountRescuer parent;
 }
