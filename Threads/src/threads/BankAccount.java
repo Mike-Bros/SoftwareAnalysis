@@ -28,8 +28,9 @@ public class BankAccount {
         balance = balance + amount;
         logView.log(". Balance = " + balance);
         checkFinished(user);
-        assert(balance == newBalance); // should be true if this method is thread-safe
         user.notifyAll();
+        
+        assert(balance == newBalance); // should be true if this method is thread-safe
     }
     /**
      * Withdraws an amount on behalf of a bank account user.
@@ -45,12 +46,15 @@ public class BankAccount {
         int newBalance = balance - amount;
         logView.log("\n" +user.getName() + " Withdrawing $" + amount);
         if ( amount > balance ) {
-            while(amount>balance){
+            
                 user.setWaiting(true);
+                
                 user.wait();
-            }
-            user.setWaiting(false);
+                
+            
+            
         }
+        user.setWaiting(false);
         balance = balance - amount;
         logView.log(". Balance = " + balance);
         checkFinished(user);

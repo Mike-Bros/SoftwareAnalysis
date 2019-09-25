@@ -39,7 +39,8 @@ public class BankAccountUser extends Thread{
      * Runs the transactions in a loop.
      * When finished, a message is logged.
      */
-    public void run(){
+    @Override
+    public synchronized void run(){
         for (int amount : transactions) {
             if (amount > 0) {
                 account.deposit(amount, this);

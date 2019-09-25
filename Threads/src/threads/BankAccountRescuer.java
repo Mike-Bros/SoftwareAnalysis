@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author bros0167
+ * @author Michael Bros
  */
 public class BankAccountRescuer extends BankAccountUser{
     
@@ -18,6 +18,7 @@ public class BankAccountRescuer extends BankAccountUser{
         super(name, account, null);
         this.userArr = userArr;
         this.account = account;
+        System.out.println("LOL RESCUE ME");
     }
     
     @Override
@@ -40,7 +41,7 @@ public class BankAccountRescuer extends BankAccountUser{
     private boolean allFinished(){
     boolean allFinished = true;
         for(int i=0;i<userArr.length;i++){
-            if(checkFinished(userArr[i])){
+            if(!checkFinished(userArr[i])){
                 allFinished = false;
             }
         }
@@ -48,15 +49,12 @@ public class BankAccountRescuer extends BankAccountUser{
     }
     
     private boolean allWaiting(){
-        boolean allWaiting = true;
         for(int i=0;i<userArr.length;i++){
-            if(!checkFinished(userArr[i])){
-                if(!userArr[i].getWaiting()){
-                    allWaiting = false;
-                }
+            if(!checkFinished(userArr[i]) && !userArr[i].getWaiting()){
+                return false;
             }
         }
-        return allWaiting;
+        return true;
     }
     
     private boolean checkFinished(BankAccountUser user) {
