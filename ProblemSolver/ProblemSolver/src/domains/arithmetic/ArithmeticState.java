@@ -33,6 +33,6 @@ public class ArithmeticState implements State{
     public String toString() {
         return "The value is: " + contents;
     }
-
+    
     final int contents;
 }
