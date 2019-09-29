@@ -29,7 +29,6 @@ public class BankAccount {
         logView.log(". Balance = " + balance);
         checkFinished(user);
         user.notifyAll();
-        
         assert(balance == newBalance); // should be true if this method is thread-safe
     }
     /**
