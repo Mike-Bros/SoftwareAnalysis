@@ -54,11 +54,56 @@ public class ParenthesisCalculator extends PrecedenceCalculator {
                     }else{
                         reduceNumOpNum();
                     }
+                }else if(getDispenser().tokenIsLeftParen() || getDispenser().tokenIsLeftParen()){
+                    if(getDispenser().tokenIsLeftParen()){
+                        break;
+                    }else{
+                        syntaxError("Error -- mismatched parentheses");
+                    }
                 }
             }
-        }else{
-            //do nothing?
         }
+    }
+    
+    @Override
+    /**
+     * Reduces NUM OP NUM on stack to NUM.
+     * This method should only be called when numOpNumOnStack() returns true.
+     * This method is public so that it can be used by subclasses.
+     */
+    public void reduceNumOpNum() {
+        char right_paren = ')';
+        char left_paren = '(';
+        if(getStack().lastElement().equals(right_paren)){
+            getStack().pop(); // get rid of )
+        }
+        
+        double operand2 = (Double)getStack().pop();
+        char operator = (Character)getStack().pop();
+        double operand1 = (Double)getStack().pop();
+        getStack().push(operate(operator, operand1, operand2));
+        
+        double num = (Double)getStack().pop();
+        if(getStack().lastElement().equals(left_paren)){
+            getStack().pop(); // get rid of (
+        }
+        getStack().push(num);
+    }
+    
+    /**
+     * Private helper method for reduceNumOpNum.
+     * Performs the operation indicated by the operator on the operands.
+     * @param op the operator
+     * @param op1 the first operand
+     * @param op2 the second operand
+     * @return the value of the result
+     */
+    private static double operate(char op, double op1, double op2) {
+        if (op == '+') return op1+op2;
+        else if (op == '-') return op1-op2;
+        else if (op == '*') return op1*op2;
+        else if (op == '/') return op1/op2;
+        else throw new RuntimeException("Bad operator in Calculator.operate: " + op);
     }
     
     /**
@@ -70,6 +115,10 @@ public class ParenthesisCalculator extends PrecedenceCalculator {
         getDispenser().advance();
         if (!getDispenser().tokenIsNumber()) {
             syntaxError(NUM);
+        }else if (getDispenser().tokenIsLeftParen()) {
+            setState(State.LEFT_PAREN);
+        } else if (getDispenser().tokenIsRightParen()) {
+            setState(State.RIGHT_PAREN);
         }
         setState(State.NUMBER);
     }
@@ -119,6 +168,7 @@ public class ParenthesisCalculator extends PrecedenceCalculator {
     }
     
     private void left_paren(){
+        shift();
         getDispenser().advance();
         if(getDispenser().tokenIsLeftParen()){
             setState(State.LEFT_PAREN);
@@ -134,6 +184,7 @@ public class ParenthesisCalculator extends PrecedenceCalculator {
     }
     
     private void right_paren(){
+        shift();
         getDispenser().advance();
         reduce();
         if(getDispenser().tokenIsEOF()){
