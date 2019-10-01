@@ -58,7 +58,7 @@ public class ParenthesisCalculator extends PrecedenceCalculator {
                     if(getDispenser().tokenIsLeftParen()){
                         break;
                     }else{
-                        syntaxError("Error -- mismatched parentheses");
+                        syntaxError("not sure this is error tho");
                     }
                 }
             }
@@ -68,6 +68,7 @@ public class ParenthesisCalculator extends PrecedenceCalculator {
     @Override
     /**
      * Reduces NUM OP NUM on stack to NUM.
+     * If there are parenthesis is pops them off the stack in order to operate
      * This method should only be called when numOpNumOnStack() returns true.
      * This method is public so that it can be used by subclasses.
      */
@@ -83,11 +84,11 @@ public class ParenthesisCalculator extends PrecedenceCalculator {
         double operand1 = (Double)getStack().pop();
         getStack().push(operate(operator, operand1, operand2));
         
-        double num = (Double)getStack().pop();
+        //double num = (Double)getStack().pop();
         if(getStack().lastElement().equals(left_paren)){
             getStack().pop(); // get rid of (
         }
-        getStack().push(num);
+        //getStack().push(num);
     }
     
     /**
@@ -114,7 +115,7 @@ public class ParenthesisCalculator extends PrecedenceCalculator {
     private void start() {
         getDispenser().advance();
         if (!getDispenser().tokenIsNumber()) {
-            syntaxError(NUM);
+            //syntaxError(NUM);
         }else if (getDispenser().tokenIsLeftParen()) {
             setState(State.LEFT_PAREN);
         } else if (getDispenser().tokenIsRightParen()) {
@@ -179,14 +180,14 @@ public class ParenthesisCalculator extends PrecedenceCalculator {
         }else if(getDispenser().tokenIsOperator()){
             setState(State.OPERATOR);
         }else if(getDispenser().tokenIsEOF()){
-            syntaxError("Error -- operator expected. Found: (");
+            syntaxError("Error -- mismatched parentheses");
         }
     }
     
     private void right_paren(){
         shift();
-        getDispenser().advance();
         reduce();
+        getDispenser().advance();
         if(getDispenser().tokenIsEOF()){
             setState(State.END);
         }else if(getDispenser().tokenIsLeftParen()){
