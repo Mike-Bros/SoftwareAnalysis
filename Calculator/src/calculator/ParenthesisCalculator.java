@@ -115,7 +115,7 @@ public class ParenthesisCalculator extends PrecedenceCalculator {
     private void start() {
         getDispenser().advance();
         if (!getDispenser().tokenIsNumber()) {
-            //syntaxError(NUM);
+            syntaxError(NUM);
         }else if (getDispenser().tokenIsLeftParen()) {
             setState(State.LEFT_PAREN);
         } else if (getDispenser().tokenIsRightParen()) {
