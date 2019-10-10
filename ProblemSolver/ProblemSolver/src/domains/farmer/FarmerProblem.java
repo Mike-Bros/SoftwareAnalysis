@@ -9,9 +9,9 @@ public class FarmerProblem extends Problem {
             super.setName("Farmer, Wolf, Goat, and Cabbage");
             super.setIntroduction(INTRO);
             super.setMover(new FarmerMover());
-            super.setInitialState(new FarmerState("Here is/an initial/state"));
+            super.setInitialState(new FarmerState("West","West","West","West"));
             super.setCurrentState(super.getInitialState());
-            super.setFinalState(new FarmerState("What happens/when/you call/Uber"));
+            super.setFinalState(new FarmerState("East","East","East","East"));
         }
 
         private static final String INTRO = 
