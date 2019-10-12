@@ -1,6 +1,5 @@
 package domains.farmer;
 
-import domains.arithmetic.ArithmeticState;
 import framework.problem.Mover;
 import framework.problem.State;
 
@@ -23,58 +22,67 @@ public class FarmerMover extends Mover{
 
         private State tryFarm(State state) {
             FarmerState otherState = (FarmerState) state;
-            if(otherState.west[0]&& (otherState.west[1]||otherState.west[2]||otherState.west[3])){
-                //return a state with farmer on the east side and everything 
-                //else stays the same
-                setSides(otherState);
-                this.west[0]=false;
-                this.east[0]=true;
+            setSides(otherState);
+            if(farmerCanMove()&&!isWest(0)){
+                swapSides(0);
+                sideToString();
+                return new FarmerState(objectSides[0],objectSides[1],objectSides[2],objectSides[3]);
+            }else if(farmerCanMove()&&isWest(0)){
+                swapSides(0);
                 sideToString();
                 return new FarmerState(objectSides[0],objectSides[1],objectSides[2],objectSides[3]);
             }else{
-                //return a state with farmer on the west side and everything 
-                //else stays the same
-                setSides(otherState);
-                this.west[0]=true;
-                this.east[0]=false;
-                sideToString();
-                return new FarmerState(objectSides[0],objectSides[1],objectSides[2],objectSides[3]);
+                return illegalMove(otherState);
             }
         }
         
          private State tryWolf(State state) {
-            FarmerState otherState = (FarmerState) state;
-            if(otherState.west[0]&&otherState.west[1]){
-                setSides(otherState);
-                tryFarm(otherState);
-                this.west[1]=false;
-                this.east[1]=true;
-                sideToString();
-                return new FarmerState(objectSides[0],objectSides[1],objectSides[2],objectSides[3]);
-            }else if(otherState.east[0]&&otherState.east[1]){
-                setSides(otherState);
-                tryFarm(otherState);
-                this.west[1]=true;
-                this.east[1]=false;
-                sideToString();
-                return new FarmerState(objectSides[0],objectSides[1],objectSides[2],objectSides[3]);
-            }else{
-                throw new Error("Cannot move the wolf");
-            }
+           FarmerState otherState = (FarmerState) state;
+           setSides(otherState);
+           swapSides(1);
+           if(farmerCanMove()&&!onSameSide(0,1)){
+               swapSides(0);
+               sideToString();
+               return new FarmerState(objectSides[0],objectSides[1],objectSides[2],objectSides[3]);
+           }else{
+               swapSides(1);
+               return illegalMove(otherState);
+           }
         }
          
           private State tryGoat(State state) {
-            return new FarmerState(objectSides[0],objectSides[1],objectSides[2],objectSides[3]);
+           FarmerState otherState = (FarmerState) state;
+           setSides(otherState);
+           swapSides(2);
+           if(farmerCanMove()&&!onSameSide(0,2)){
+               swapSides(0);
+               sideToString();
+               return new FarmerState(objectSides[0],objectSides[1],objectSides[2],objectSides[3]);
+           }else{
+               swapSides(2);
+               return illegalMove(otherState);
+           }
         }
           
            private State tryCab(State state) {
-            return new FarmerState(objectSides[0],objectSides[1],objectSides[2],objectSides[3]);
+           FarmerState otherState = (FarmerState) state;
+           setSides(otherState);
+           swapSides(3);
+           if(farmerCanMove()&&!onSameSide(0,3)){
+               swapSides(0);
+               sideToString();
+               return new FarmerState(objectSides[0],objectSides[1],objectSides[2],objectSides[3]);
+           }else{
+               swapSides(3);
+               return illegalMove(otherState);
+           }
         }
 
         private State illegalMove(State state) {
             return null;
         }
         
+        //helper method that sets private string array to that of the states
         private void setSides(State state){
             FarmerState otherState = (FarmerState) state;
             this.west=otherState.west;
@@ -91,6 +99,54 @@ public class FarmerMover extends Mover{
             }
         }
         
+        private Boolean isWest(int placement){
+            return west[placement];
+        }
+        
+       private void swapSides(int object){
+           if(isWest(object)){
+               east[object]=true;
+               west[object]=false;
+           }else{
+               east[object]=false;
+               west[object]=true;
+           }
+       }
+       
+       private Boolean farmerCanMove(){
+           if(wolfCanEat()||goatCanEat()){
+               return false;
+           }else{
+               return true;
+           }
+       }
+       
+       private Boolean wolfCanEat(){
+           if((isWest(1)&&isWest(2))||(!isWest(1)&&!isWest(2))){
+               return true;
+           }else{
+               return false;
+           }
+       }
+       
+       private Boolean goatCanEat(){
+           if((isWest(2)&&isWest(3))||(!isWest(2)&&!isWest(3))){
+               return true;
+           }else{
+               return false;
+           }
+       }
+        
+       private Boolean onSameSide(int object1,int object2){
+           if(isWest(object1)&&isWest(object2)){
+               return true;
+           }else if(!isWest(object1)&&!isWest(object2)){
+               return true;
+           }else{
+               return false;
+           }
+       }
+       
         private Boolean[] east;
         private Boolean[] west;
         private final String[] objectSides = {"","","",""};

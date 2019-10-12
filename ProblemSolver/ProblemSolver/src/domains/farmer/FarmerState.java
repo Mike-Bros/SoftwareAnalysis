@@ -24,13 +24,14 @@ public class FarmerState implements State{
 
     @Override
     public boolean equals(Object other) {
+        Boolean equal;
         if(other instanceof FarmerState){
             FarmerState otherState = (FarmerState) other;
-            return (otherState.west == this.west) && (otherState.east == this.east);
+            equal = (otherState.west == this.west) && (otherState.east == this.east);
         }else{
-            return false;
+            equal = false;
         }
-        
+        return equal;
     }
 
     @Override
