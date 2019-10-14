@@ -23,29 +23,32 @@ public class FarmerMover extends Mover{
         private State tryFarm(State state) {
             FarmerState otherState = (FarmerState) state;
             setSides(otherState);
-            if(farmerCanMove()&&!isWest(0)){
-                swapSides(0);
-                sideToString();
-                return new FarmerState(objectSides[0],objectSides[1],objectSides[2],objectSides[3]);
-            }else if(farmerCanMove()&&isWest(0)){
-                swapSides(0);
-                sideToString();
-                return new FarmerState(objectSides[0],objectSides[1],objectSides[2],objectSides[3]);
-            }else{
-                return illegalMove(otherState);
-            }
+           swapSides(0);
+           if(!wolfCanEat()&&!goatCanEat()){
+               sideToString();
+               return new FarmerState(objectSides[0],objectSides[1],objectSides[2],objectSides[3]);
+           }else{
+               swapSides(0);
+               return illegalMove(otherState);
+           }
+           
         }
         
          private State tryWolf(State state) {
            FarmerState otherState = (FarmerState) state;
            setSides(otherState);
-           swapSides(1);
-           if(farmerCanMove()&&!onSameSide(0,1)){
-               swapSides(0);
-               sideToString();
-               return new FarmerState(objectSides[0],objectSides[1],objectSides[2],objectSides[3]);
-           }else{
+           if(onSameSide(0,1)){
                swapSides(1);
+               swapSides(0);
+               if(!wolfCanEat()&&!goatCanEat()){
+                   sideToString();
+                   return new FarmerState(objectSides[0],objectSides[1],objectSides[2],objectSides[3]);
+               }else{
+                   swapSides(1);
+                   swapSides(0);
+                   return illegalMove(otherState);
+               }
+           }else{
                return illegalMove(otherState);
            }
         }
@@ -53,13 +56,18 @@ public class FarmerMover extends Mover{
           private State tryGoat(State state) {
            FarmerState otherState = (FarmerState) state;
            setSides(otherState);
-           swapSides(2);
-           if(farmerCanMove()&&!onSameSide(0,2)){
-               swapSides(0);
-               sideToString();
-               return new FarmerState(objectSides[0],objectSides[1],objectSides[2],objectSides[3]);
-           }else{
+           if(onSameSide(0,2)){
                swapSides(2);
+               swapSides(0);
+               if(!wolfCanEat()&&!goatCanEat()){
+                   sideToString();
+                   return new FarmerState(objectSides[0],objectSides[1],objectSides[2],objectSides[3]);
+               }else{
+                   swapSides(2);
+                   swapSides(0);
+                   return illegalMove(otherState);
+               }
+           }else{
                return illegalMove(otherState);
            }
         }
@@ -67,13 +75,18 @@ public class FarmerMover extends Mover{
            private State tryCab(State state) {
            FarmerState otherState = (FarmerState) state;
            setSides(otherState);
-           swapSides(3);
-           if(farmerCanMove()&&!onSameSide(0,3)){
-               swapSides(0);
-               sideToString();
-               return new FarmerState(objectSides[0],objectSides[1],objectSides[2],objectSides[3]);
-           }else{
+           if(onSameSide(0,3)){
                swapSides(3);
+               swapSides(0);
+               if(!wolfCanEat()&&!goatCanEat()){
+                   sideToString();
+                   return new FarmerState(objectSides[0],objectSides[1],objectSides[2],objectSides[3]);
+               }else{
+                   swapSides(3);
+                   swapSides(0);
+                   return illegalMove(otherState);
+               }
+           }else{
                return illegalMove(otherState);
            }
         }
@@ -122,7 +135,9 @@ public class FarmerMover extends Mover{
        }
        
        private Boolean wolfCanEat(){
-           if((isWest(1)&&isWest(2))||(!isWest(1)&&!isWest(2))){
+           if(onSameSide(0,1)){
+               return false;
+           }else if(onSameSide(1,2)){
                return true;
            }else{
                return false;
@@ -130,7 +145,9 @@ public class FarmerMover extends Mover{
        }
        
        private Boolean goatCanEat(){
-           if((isWest(2)&&isWest(3))||(!isWest(2)&&!isWest(3))){
+           if(onSameSide(0,2)){
+               return false;
+           }else if(onSameSide(2,3)){
                return true;
            }else{
                return false;
