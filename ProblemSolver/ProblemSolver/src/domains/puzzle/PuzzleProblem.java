@@ -17,9 +17,9 @@ public class PuzzleProblem extends Problem {
 
     public PuzzleProblem() {
         super();
-        super.setName("Farmer, Wolf, Goat, and Cabbage");
+        super.setName("8-Puzzle");
         super.setIntroduction(INTRO);
-        super.setMover(new FarmerMover());
+        super.setMover(new PuzzleMover());
         super.setInitialState(new PuzzleState(
                         new int[][]{new int[]{2, 8, 3}, 
                                     new int[]{1, 6, 4}, 
@@ -35,7 +35,14 @@ public class PuzzleProblem extends Problem {
               + "There is one blank space that holds no tile.  A legal move "
               + "consists of sliding a tile into the blank space if the tile is "
               + "adjacent to it. The goal is to move tiles around until the board "
-              + "looks like the final state below.";
+              + "looks like the final state below.\n\n"
+              + "+---+---+---+\n" 
+              + "| 1 | 2 | 3 |\n" 
+              + "+---+---+---+\n" 
+              + "| 8 |   | 4 |\n" 
+              + "+---+---+---+\n" 
+              + "| 7 | 6 | 5 |\n" 
+              + "+---+---+---+";
     }
     
 
