@@ -1,6 +1,7 @@
 package domains.puzzle;
 
 import domains.dummy.DummyState;
+import domains.puzzle.PuzzleState.Location;
 import framework.problem.Mover;
 import framework.problem.State;
 
@@ -34,38 +35,79 @@ public class PuzzleMover extends Mover{
         }
 
         private State trySlide1(State state) {
-            return null;
+            PuzzleState otherState = (PuzzleState) state;
+            return slideGeneric(otherState,1);
         }
         
         private State trySlide2(State state) {
-            return null;
+            PuzzleState otherState = (PuzzleState) state;
+            return slideGeneric(otherState,2);
         }
         
         private State trySlide3(State state) {
-            return null;
+            PuzzleState otherState = (PuzzleState) state;
+            return slideGeneric(otherState,3);
         }
         
         private State trySlide4(State state) {
-            return null;
+            PuzzleState otherState = (PuzzleState) state;
+            return slideGeneric(otherState,4);
         }
         
         private State trySlide5(State state) {
-            return null;
+            PuzzleState otherState = (PuzzleState) state;
+            return slideGeneric(otherState,5);
         }
         
         private State trySlide6(State state) {
-            return null;
+            PuzzleState otherState = (PuzzleState) state;
+            return slideGeneric(otherState,6);
         }
         
         private State trySlide7(State state) {
-            return null;
+            PuzzleState otherState = (PuzzleState) state;
+            return slideGeneric(otherState,7);
         }
 
         private State trySlide8(State state) {
-            return null;
+            PuzzleState otherState = (PuzzleState) state;
+            return slideGeneric(otherState,8);
         }
 
         private State illegalMove(State state) {
             return null;
+        }
+        
+        private State slideGeneric(State state,int tile){
+            PuzzleState otherState = (PuzzleState) state;
+            Location tileLoc = otherState.getLocation(tile);
+            Location tile0Loc = otherState.getLocation(0);
+            if(isAdjecent(tileLoc,tile0Loc)){
+                return new PuzzleState(otherState,tileLoc,tile0Loc);
+            }else{
+                return illegalMove(otherState);
+            }
+        }
+        
+        private Boolean isAdjecent(Location loc,Location loc0){
+            if(loc.getColumn()==loc0.getColumn()){
+                if(loc.getRow()==1){
+                    return true;
+                }else if(loc0.getRow()==1){
+                    return true;
+                }else{
+                    return false;
+                }
+            }else if(loc.getRow()==loc0.getRow()){
+                if(loc.getColumn()==1){
+                    return true;
+                }else if(loc0.getColumn()==1){
+                    return true;
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
         }
 }
