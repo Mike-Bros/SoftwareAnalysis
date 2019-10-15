@@ -8,6 +8,7 @@ import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.Spinner;
 import javafx.scene.layout.HBox;
@@ -25,39 +26,67 @@ import javafx.util.Duration;
 public class Circles extends Application {
     
     public static final int ROWS = 4;
+    public static final int ROWS_MIN = 1;
+    public static final int ROWS_MAX = 5;
+    
     public static final int COLS = 5;
+    public static final int COLS_MIN = 1;
+    public static final int COLS_MAX = 5;
+    
     public static final int CELL_SIZE = 100;
+    public static final int CELL_SIZE_MIN = 50;
+    public static final int CELL_SIZE_MAX = 150;
     
     private int row = 0;
     private int col = 0;
     
-    private HBox root;
+    private VBox root;
+    private HBox controlGroup, labelGroup;
     private Pane canvas;
     private Button starter;
     private Spinner rowSpinner,columnSpinner,xScale,yScale;
     private Slider cellSize;
+    private Label rowSpinnerL,columnSpinnerL,cellSizeL,cellSizeNum,xScaleL,yScaleL;
     
     @Override
     public void start(Stage primaryStage) {
-        root = new HBox();
+        root = new VBox(5);
+        controlGroup = new HBox(10);
+        labelGroup = new HBox(60);
         canvas = new Pane();
-        starter = new Button("Circles");
+        starter = new Button();
         
-        rowSpinner = new Spinner(1,5,4);
-        columnSpinner = new Spinner(1,5,5);
+        rowSpinner = new Spinner(ROWS_MIN,ROWS_MAX,ROWS);
+        rowSpinner.setPrefWidth(CELL_SIZE_MAX*COLS_MAX/12);
+        rowSpinnerL = new Label("Rows");
+        columnSpinner = new Spinner(COLS_MIN,COLS_MAX,COLS);
+        columnSpinner.setPrefWidth(CELL_SIZE_MAX*COLS_MAX/12);
+        columnSpinnerL = new Label("Columns");
         
-        
-        
+        cellSize = new Slider(CELL_SIZE_MIN,CELL_SIZE_MAX,CELL_SIZE);
+        cellSizeL = new Label("Cell Size");
+        cellSizeNum = new Label(String.format("%.0f",cellSize.getValue()));
+                
         xScale = new Spinner(-3,3,0);
+        xScale.setPrefWidth(CELL_SIZE_MAX*COLS_MAX/12);
+        xScaleL = new Label("X Scale");
         yScale = new Spinner(-3,3,0);
-        
+        yScale.setPrefWidth(CELL_SIZE_MAX*COLS_MAX/12);
+        yScaleL = new Label("Y Scale");
         
         root.setAlignment(Pos.CENTER);
-        canvas.setPrefSize(COLS * CELL_SIZE, ROWS * CELL_SIZE);
+        labelGroup.setAlignment(Pos.CENTER);
+        controlGroup.setAlignment(Pos.CENTER);
+        canvas.setPrefSize(COLS_MAX * CELL_SIZE_MAX, ROWS_MAX * CELL_SIZE_MAX);
         
         addButtonHandler();
         
-        root.getChildren().addAll(canvas, rowSpinner,columnSpinner,xScale,yScale);
+        
+        
+        labelGroup.getChildren().addAll(rowSpinnerL,columnSpinnerL,cellSizeL,xScaleL,yScaleL);
+        controlGroup.getChildren().addAll(rowSpinner,columnSpinner,cellSize,cellSizeNum,xScale,yScale);
+        
+        root.getChildren().addAll(canvas, labelGroup, controlGroup);
        
         
         primaryStage.setTitle("Java 8 Lab Exercise");
