@@ -8,6 +8,9 @@ import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
+import javafx.scene.control.Spinner;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -28,18 +31,34 @@ public class Circles extends Application {
     private int row = 0;
     private int col = 0;
     
+    private HBox root;
+    private Pane canvas;
+    private Button starter;
+    private Spinner rowSpinner,columnSpinner,xScale,yScale;
+    private Slider cellSize;
+    
     @Override
     public void start(Stage primaryStage) {
-        root = new VBox();
+        root = new HBox();
         canvas = new Pane();
         starter = new Button("Circles");
+        
+        rowSpinner = new Spinner(1,5,4);
+        columnSpinner = new Spinner(1,5,5);
+        
+        
+        
+        xScale = new Spinner(-3,3,0);
+        yScale = new Spinner(-3,3,0);
+        
         
         root.setAlignment(Pos.CENTER);
         canvas.setPrefSize(COLS * CELL_SIZE, ROWS * CELL_SIZE);
         
         addButtonHandler();
         
-        root.getChildren().addAll(canvas, starter);
+        root.getChildren().addAll(canvas, rowSpinner,columnSpinner,xScale,yScale);
+       
         
         primaryStage.setTitle("Java 8 Lab Exercise");
         primaryStage.setScene(new Scene(root));
@@ -114,9 +133,6 @@ public class Circles extends Application {
         return circle;
     }
     
-    private VBox root;
-    private Pane canvas;
-    private Button starter;
 
     /**
      * @return stream which contains a stream of circles for each row
