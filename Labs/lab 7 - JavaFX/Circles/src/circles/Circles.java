@@ -113,7 +113,8 @@ public class Circles extends Application {
      * @return stream which contains a row of circles
      */
     private Stream<Circle> makeRow(){
-        return Stream.generate(() -> makeCircle()).limit(COLS);
+        int col_value = (int) columnSpinner.getValue();
+        return Stream.generate(() -> makeCircle()).limit(col_value);
         
     }
     
@@ -129,10 +130,13 @@ public class Circles extends Application {
      * @param cirlce to add to the canvas
      */
     private void addToCanvas(Circle circle){
-        double toX = CELL_SIZE/2 + row*CELL_SIZE;
-        double toY = CELL_SIZE/2 + col*CELL_SIZE;
-        double fromX = CELL_SIZE/2 + (ROWS-1)*CELL_SIZE;
-        double fromY = CELL_SIZE/2 + (COLS-1)*CELL_SIZE;
+        int cell_size = (int) cellSize.getValue();
+        int row_value = (int) rowSpinner.getValue();
+        int col_value = (int) columnSpinner.getValue();
+        double toX = cell_size/2 + row*cell_size;
+        double toY = cell_size/2 + col*cell_size;
+        double fromX = cell_size/2 + (row_value-1)*cell_size;
+        double fromY = cell_size/2 + (col_value-1)*cell_size;
         Color color = new Color(Math.random(),Math.random(),Math.random(),1);
         Circle newCircle = (Circle) circle;
         
@@ -158,7 +162,8 @@ public class Circles extends Application {
     
     private Circle makeCircle(){
         Circle circle = new Circle();
-        circle.setRadius(CELL_SIZE/4);
+        int cell_size = (int) cellSize.getValue();
+        circle.setRadius(cell_size/4);
         return circle;
     }
     
@@ -167,7 +172,8 @@ public class Circles extends Application {
      * @return stream which contains a stream of circles for each row
      */
     private Stream<Stream<Circle>> makeAllRows(){
-        return Stream.generate(() -> makeRow()).limit(ROWS);
+        int x = (int) rowSpinner.getValue();
+        return Stream.generate(() -> makeRow()).limit(x);
     
     }
     
