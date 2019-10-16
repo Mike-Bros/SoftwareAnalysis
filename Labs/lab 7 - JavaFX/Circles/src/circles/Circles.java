@@ -43,7 +43,6 @@ public class Circles extends Application {
     private VBox root;
     private HBox controlGroup, labelGroup;
     private Pane canvas;
-    private Button starter;
     private Spinner rowSpinner,columnSpinner,xScale,yScale;
     private Slider cellSize;
     private Label rowSpinnerL,columnSpinnerL,cellSizeL,cellSizeNum,xScaleL,yScaleL;
@@ -54,7 +53,6 @@ public class Circles extends Application {
         controlGroup = new HBox(10);
         labelGroup = new HBox(60);
         canvas = new Pane();
-        starter = new Button();
         
         rowSpinner = new Spinner(ROWS_MIN,ROWS_MAX,ROWS);
         rowSpinner.setPrefWidth(CELL_SIZE_MAX*COLS_MAX/12);
@@ -79,9 +77,19 @@ public class Circles extends Application {
         controlGroup.setAlignment(Pos.CENTER);
         canvas.setPrefSize(COLS_MAX * CELL_SIZE_MAX, ROWS_MAX * CELL_SIZE_MAX);
         
-        addButtonHandler();
         
-        
+        rowSpinner.valueProperty().addListener(e -> { canvas.getChildren().clear(); 
+           addAllRowsToCanvas(makeAllRows()); });
+        columnSpinner.valueProperty().addListener(e -> { canvas.getChildren().clear(); 
+           addAllRowsToCanvas(makeAllRows()); });
+        cellSize.valueProperty().addListener(e -> { canvas.getChildren().clear(); 
+           addAllRowsToCanvas(makeAllRows()); 
+           //this is not working
+            cellSizeNum = new Label(String.format("%.0f",cellSize.getValue()));});
+        xScale.valueProperty().addListener(e -> { canvas.getChildren().clear(); 
+           addAllRowsToCanvas(makeAllRows()); });
+        yScale.valueProperty().addListener(e -> { canvas.getChildren().clear(); 
+           addAllRowsToCanvas(makeAllRows()); });
         
         labelGroup.getChildren().addAll(rowSpinnerL,columnSpinnerL,cellSizeL,xScaleL,yScaleL);
         controlGroup.getChildren().addAll(rowSpinner,columnSpinner,cellSize,cellSizeNum,xScale,yScale);
@@ -93,20 +101,8 @@ public class Circles extends Application {
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
         
-        //test makeRow
-        //makeRow().forEach(x -> System.out.println(x));
-        
-        //test makeAllRows
-        //makeAllRows().forEach(r -> r.forEach(x -> System.out.println(x)));
-    }
-    
-    /**
-     * This method adds the handler to the button that gives
-     * this application its behavior.
-     */
-    private void addButtonHandler() {
-        starter.setOnAction(e -> { canvas.getChildren().clear(); 
-           addAllRowsToCanvas(makeAllRows()); });
+        canvas.getChildren().clear(); 
+        addAllRowsToCanvas(makeAllRows());
     }
     
     /**
@@ -153,8 +149,10 @@ public class Circles extends Application {
         
         ScaleTransition st= new ScaleTransition(Duration.millis(300+Math.random()*800));
         st.setNode(circle);
-        st.setByX(1.5);
-        st.setByY(1.5);
+        int x = (int) xScale.getValue();
+        int y = (int) yScale.getValue();
+        st.setByX(x);
+        st.setByY(y);
         st.setCycleCount(Animation.INDEFINITE);
         st.setAutoReverse(true);
         st.play();
