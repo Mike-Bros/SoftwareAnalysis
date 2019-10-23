@@ -98,13 +98,13 @@ public class FarmerMover extends Mover{
         //helper method that sets private string array to that of the states
         private void setSides(State state){
             FarmerState otherState = (FarmerState) state;
-            this.west=otherState.west;
-            this.east=otherState.east;
+            this.contents=otherState.contents;
         }
         
         private void sideToString(){
             for(int i=0;i<objectSides.length;i++){
-                if(east[i]==true){
+                //if east
+                if(contents[i]==false){
                     objectSides[i]="East";
                 }else{
                     objectSides[i]="West";
@@ -113,16 +113,16 @@ public class FarmerMover extends Mover{
         }
         
         private Boolean isWest(int placement){
-            return west[placement];
+            return contents[placement];
         }
         
        private void swapSides(int object){
            if(isWest(object)){
-               east[object]=true;
-               west[object]=false;
+               //set to east (false)
+               contents[object]=false;
            }else{
-               east[object]=false;
-               west[object]=true;
+               //set to west (true)
+               contents[object]=true;
            }
        }
        
@@ -164,7 +164,6 @@ public class FarmerMover extends Mover{
            }
        }
        
-        private Boolean[] east;
-        private Boolean[] west;
+        private Boolean[] contents;
         private final String[] objectSides = {"","","",""};
 }

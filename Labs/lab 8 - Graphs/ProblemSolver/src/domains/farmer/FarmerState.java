@@ -22,11 +22,7 @@ public class FarmerState implements State{
         
         if(other instanceof FarmerState){
             FarmerState otherState = (FarmerState) other;
-            Boolean west = (otherState.west == this.west);
-            Boolean east = (otherState.east == this.east);
-            Boolean result = west && east;
-            Boolean equal = result;
-            return equal;
+            return (otherState.contents == this.contents);
         }
         return false;
     }
@@ -36,9 +32,9 @@ public class FarmerState implements State{
         StringBuilder sb = new StringBuilder();
         sb.append("   |  |   \n");
         for(int i=0;i<objects.length;i++){
-            if(west[i]==true){
+            if(contents[i]==true){
                 sb.append(objects[i]+"|  |   ");
-            }else if(east[i]==true){
+            }else{
                 sb.append("   |  |"+ objects[i]);
             }
             sb.append("\n");
@@ -52,15 +48,14 @@ public class FarmerState implements State{
     private void setSide(String side, int index){
     
         if(side=="West"){
-            west[index]=true;
+            contents[index]=true;
         }else if(side=="East"){
-            east[index]=true;
+            contents[index]=false;
         }else{
             throw new Error("Problem initializing state");
         }
     }
     
-    final Boolean[] west = {false,false,false,false};
-    final Boolean[] east = {false,false,false,false};
+    final Boolean[] contents = {false,false,false,false};
     private final String[] objects = {" F "," W "," G "," C "};
 }
