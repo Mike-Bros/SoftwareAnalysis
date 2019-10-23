@@ -1,6 +1,7 @@
 package domains.farmer;
 
 import framework.problem.State;
+import java.util.Arrays;
 
 /**
  *
@@ -22,7 +23,7 @@ public class FarmerState implements State{
         
         if(other instanceof FarmerState){
             FarmerState otherState = (FarmerState) other;
-            return (otherState.contents == this.contents);
+            return Arrays.equals(otherState.contents, this.contents);
         }
         return false;
     }
