@@ -126,14 +126,6 @@ public class FarmerMover extends Mover{
            }
        }
        
-       private Boolean farmerCanMove(){
-           if(wolfCanEat()||goatCanEat()){
-               return false;
-           }else{
-               return true;
-           }
-       }
-       
        private Boolean wolfCanEat(){
            if(onSameSide(0,1)){
                return false;

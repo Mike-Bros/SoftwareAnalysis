@@ -102,7 +102,6 @@ public class FarmerMoverTest {
         next = mover.doMove(m, curr);
         assertTrue(next != null);
         assertTrue(((FarmerState)next).equals(new FarmerState(fNext, wNext, gNext, cNext)));
-        //This should be assertFalse??
         assertTrue(curr.equals(copy));
     }
     
