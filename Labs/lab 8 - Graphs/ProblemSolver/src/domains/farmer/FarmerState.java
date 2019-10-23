@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 public class FarmerState implements State{
     
-    FarmerState(String farmer, String wolf, String goat, String cabbage) {
+    public FarmerState(String farmer, String wolf, String goat, String cabbage) {
         String[] objectSides = {farmer,wolf,goat,cabbage};
         
         for(int i=0;i<objects.length;i++){
