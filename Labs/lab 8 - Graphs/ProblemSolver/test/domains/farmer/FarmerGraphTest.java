@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
  * A test file for FarmerGraph.
  * @author tcolburn
  */
-public class FarmerGraphTest {
+public class FarmerGraphTest{
     
     public FarmerGraphTest() {
         farmerGraph = new FarmerGraph();

@@ -5,12 +5,11 @@ import framework.graph.Vertex;
 
 /**
  * A graph for the FWGC problem.
- * @author Your name and section here
+ * @author Michael Bros
  */
 public class FarmerGraph extends Graph {
     
     public FarmerGraph() {
-        /* you must provide */
         graph.addEdge(one, seven);
         graph.addEdge(seven, four);
         graph.addEdge(four, ten);
@@ -36,64 +35,63 @@ public class FarmerGraph extends Graph {
     }
     
     public Vertex getStart() {
-        /* you must provide */
         return one;
     }
     
     public Vertex getEnd() {
-        /* you must provide */
         return six;
     }
     
+    
     /* private fields and methods follow */
-    private Graph graph = new Graph();
+    private final Graph graph = new Graph();
     
-    private Vertex one = new Vertex(new FarmerState("West",
+    private final Vertex one = new Vertex(new FarmerState("West",
                                                     "West",
                                                     "West",
                                                     "West"));
     
-    private Vertex two = new Vertex(new FarmerState("West",
+    private final Vertex two = new Vertex(new FarmerState("West",
                                                     "East",
                                                     "West",
                                                     "East"));
     
-    private Vertex three = new Vertex(new FarmerState("West",
+    private final Vertex three = new Vertex(new FarmerState("West",
                                                     "East",
                                                     "West",
                                                     "West"));
     
-    private Vertex four = new Vertex(new FarmerState("West",
+    private final Vertex four = new Vertex(new FarmerState("West",
                                                     "West",
                                                     "East",
                                                     "West"));
     
-    private Vertex five = new Vertex(new FarmerState("West",
+    private final Vertex five = new Vertex(new FarmerState("West",
                                                     "West",
                                                     "West",
                                                     "East"));
     
-    private Vertex six = new Vertex(new FarmerState("East",
+    private final Vertex six = new Vertex(new FarmerState("East",
                                                     "East",
                                                     "East",
                                                     "East"));
     
-    private Vertex seven = new Vertex(new FarmerState("East",
+    private final Vertex seven = new Vertex(new FarmerState("East",
                                                     "West",
                                                     "East",
                                                     "West"));
      
-    private Vertex eight = new Vertex(new FarmerState("East",
+    private final Vertex eight = new Vertex(new FarmerState("East",
                                                     "West",
                                                     "East",
                                                     "East")); 
     
-    private Vertex nine = new Vertex(new FarmerState("East",
+    private final Vertex nine = new Vertex(new FarmerState("East",
                                                     "East",
                                                     "West",
                                                     "East"));
     
-    private Vertex ten = new Vertex(new FarmerState("East",
+    private final Vertex ten = new Vertex(new FarmerState("East",
                                                     "East",
                                                     "East",
                                                     "West"));
