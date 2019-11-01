@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="2" failures="0" hostname="DESKTOP-BKUB0JN" name="framework.graph.GraphCreatorTest" skipped="0" tests="2" time="0.082" timestamp="2019-10-30T19:17:53">
+<testsuite errors="2" failures="0" hostname="DESKTOP-BKUB0JN" name="framework.graph.GraphCreatorTest" skipped="0" tests="2" time="0.081" timestamp="2019-11-01T22:24:48">
   <properties>
     <property name="netbeans.autoupdate.country" value="US" />
     <property name="javafx.binarycss" value="false" />
@@ -46,7 +46,7 @@
     <property name="user.name" value="Mike" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner framework.graph.GraphCreatorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\build\test\results\TEST-framework.graph.GraphCreatorTest.xml crashfile=D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\build\junitvmwatcher863921354146636858.properties propsfile=D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\build\junit1366640237759922833.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner framework.graph.GraphCreatorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\build\test\results\TEST-framework.graph.GraphCreatorTest.xml crashfile=D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\build\junitvmwatcher5915486182448902715.properties propsfile=D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\build\junit7885376857324156284.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -81,7 +81,7 @@
     <property name="javac.debug" value="true" />
     <property name="javadoc.splitindex" value="true" />
     <property name="file.separator" value="\" />
-    <property name="javac.includesfile.binary" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\null620191764" />
+    <property name="javac.includesfile.binary" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\null401355806" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="mkdist.disabled" value="false" />
     <property name="javac.test.processorpath" value="D:\Program Files\Java\jdk1.8.0_221\jre/lib/javaws.jar:D:\Program Files\Java\jdk1.8.0_221\jre/lib/deploy.jar:D:\Program Files\Java\jdk1.8.0_221\jre/lib/plugin.jar:build/classes:D:\Program Files\NetBeans 8.2\platform\modules\ext\junit-4.12.jar:D:\Program Files\NetBeans 8.2\platform\modules\ext\hamcrest-core-1.3.jar" />
@@ -93,6 +93,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD" />
     <property name="libs.hibernate4-persistencemodelgen.javadoc" value="" />
     <property name="libs.jaxb.javadoc" value="D:\Program Files\NetBeans 8.2\ide\docs\jaxb-api-doc.zip" />
+    <property name="org.openide.awt.SwingBrowserImpl.do-not-block-awt" value="false" />
     <property name="javac.includes.binary" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\build\test\classes\framework\graph\GraphCreatorTest.class" />
     <property name="ant.home" value="D:\Program Files\NetBeans 8.2\extide\ant" />
     <property name="libs.junit_4.src" value="D:\Program Files\NetBeans 8.2\platform\docs\junit-4.12-sources.jar" />
@@ -290,8 +291,8 @@
     <property name="debug-transport-by-os" value="dt_shmem" />
     <property name="libs.MySQLDriver.src" value="" />
     <property name="sun.jnu.encoding" value="Cp1252" />
-    <property name="java.runtime.version" value="1.8.0_221-b11" />
     <property name="build.test.results.dir" value="build/test/results" />
+    <property name="java.runtime.version" value="1.8.0_221-b11" />
     <property name="default.javac.target" value="1.8" />
     <property name="libs.junit_4.classpath" value="D:\Program Files\NetBeans 8.2\platform\modules\ext\junit-4.12.jar" />
     <property name="user.timezone" value="" />
@@ -320,8 +321,8 @@
     <property name="libs.JAXB-ENDORSED.classpath" value="D:\Program Files\NetBeans 8.2\ide\modules\ext\jaxb\api\jaxb-api.jar" />
     <property name="nb.internal.action.name" value="test.single" />
     <property name="libs.eclipselink.classpath" value="D:\Program Files\NetBeans 8.2\java\modules\ext\eclipselink\eclipselink.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\eclipselink\org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar" />
-    <property name="libs.beans-binding.javadoc" value="D:\Program Files\NetBeans 8.2\java\docs\beansbinding-1.2.1-doc.zip" />
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="libs.beans-binding.javadoc" value="D:\Program Files\NetBeans 8.2\java\docs\beansbinding-1.2.1-doc.zip" />
     <property name="java.vm.vendor" value="Oracle Corporation" />
     <property name="libs.CopyLibs.classpath" value="D:\Program Files\NetBeans 8.2\java\ant\extra\org-netbeans-modules-java-j2seproject-copylibstask.jar" />
     <property name="libs.spring-framework300.classpath" value="D:\Program Files\NetBeans 8.2\ide\modules\org-apache-commons-logging.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\cglib-2.2.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-aop-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-aspects-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-beans-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-build-src-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-context-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-context-support-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-core-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-expression-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-framework-bom-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-instrument-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-instrument-tomcat-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-jdbc-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-jms-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-orm-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-oxm-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-struts-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-test-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-tx-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-web-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-webmvc-3.2.7.RELEASE.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-webmvc-portlet-3.2.7.RELEASE.jar" />
@@ -335,8 +336,8 @@
     <property name="libs.hibernate4-persistencemodelgen.classpath" value="D:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-jpamodelgen-4.3.1.Final.jar" />
     <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
     <property name="main.class" value="com.javafx.main.Main" />
-    <property name="build.dir" value="build" />
     <property name="libs.CopyLibs.src" value="" />
+    <property name="build.dir" value="build" />
     <property name="ant.version" value="Apache Ant(TM) version 1.9.7 compiled on April 9 2016" />
     <property name="file.encoding" value="Cp1252" />
     <property name="build.classes.excludes" value="**/*.java,**/*.form" />
@@ -347,14 +348,14 @@
   </properties>
   <testcase classname="framework.graph.GraphCreatorTest" name="createFarmerGraph" time="0.035">
     <error message="framework.graph.Vertex cannot be cast to framework.problem.State" type="java.lang.ClassCastException">java.lang.ClassCastException: framework.graph.Vertex cannot be cast to framework.problem.State
-	at framework.graph.GraphCreator.createGraphFor(GraphCreator.java:24)
+	at framework.graph.GraphCreator.createGraphFor(GraphCreator.java:32)
 	at framework.graph.GraphCreatorTest.createAndTest(GraphCreatorTest.java:37)
 	at framework.graph.GraphCreatorTest.createFarmerGraph(GraphCreatorTest.java:25)
 </error>
   </testcase>
   <testcase classname="framework.graph.GraphCreatorTest" name="createPuzzleGraph" time="0.003">
     <error message="framework.graph.Vertex cannot be cast to framework.problem.State" type="java.lang.ClassCastException">java.lang.ClassCastException: framework.graph.Vertex cannot be cast to framework.problem.State
-	at framework.graph.GraphCreator.createGraphFor(GraphCreator.java:24)
+	at framework.graph.GraphCreator.createGraphFor(GraphCreator.java:32)
 	at framework.graph.GraphCreatorTest.createAndTest(GraphCreatorTest.java:37)
 	at framework.graph.GraphCreatorTest.createPuzzleGraph(GraphCreatorTest.java:33)
 </error>
