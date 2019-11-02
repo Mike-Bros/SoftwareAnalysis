@@ -205,4 +205,15 @@ public class PuzzleState implements State {
         }
         return dest;
     }
+    
+    @Override
+    public int hashCode() {
+        int h = 0;
+        for (int r = 0; r < tiles.length; r++) {
+            for (int c = 0; c < tiles[r].length; c++) {
+                h = h * 3 + tiles[r][c];
+            }
+        }
+        return h;
+    }
 }

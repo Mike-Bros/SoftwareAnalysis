@@ -57,13 +57,6 @@ public class FarmerState implements State{
         }
     }
     
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + Arrays.deepHashCode(this.contents);
-        return hash;
-    }
-    
     final Boolean[] contents = {false,false,false,false};
     private final String[] objects = {" F "," W "," G "," C "};
 }

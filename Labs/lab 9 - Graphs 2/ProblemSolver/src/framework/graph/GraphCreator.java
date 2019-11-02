@@ -23,13 +23,7 @@ public class GraphCreator {
         while(!stack.empty()){
             Vertex u = stack.pop();
             for(int i = 0;i<moves.size();i++){
-                //ERROR: framwork.graph.Vertex cannot be cast to framwork.problem.State
-                //So doMove() needs to be passed a state, but u is a vertex
-                //have tried all of the following fixes for this line:
-                //1. Change stack to <State> type so that u is already a State 
-                //and doesnt need to be cast
-                //2. Change next to be a Vertex
-                State next = problem.getMover().doMove(moves.get(i), (State) u);
+                State next = problem.getMover().doMove(moves.get(i),(State) u.getData());
                 if(next != null){
                     Vertex v = new Vertex(next);
                     if(graph.find(v)!=null){

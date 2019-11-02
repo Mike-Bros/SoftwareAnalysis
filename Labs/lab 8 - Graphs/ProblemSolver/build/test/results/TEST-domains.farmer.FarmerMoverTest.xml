@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="4" failures="0" hostname="DESKTOP-BKUB0JN" name="domains.farmer.FarmerGraphTest" skipped="0" tests="4" time="0.095" timestamp="2019-10-25T15:23:30">
+<testsuite errors="0" failures="4" hostname="DESKTOP-BKUB0JN" name="domains.farmer.FarmerMoverTest" skipped="0" tests="5" time="0.084" timestamp="2019-11-01T22:55:11">
   <properties>
     <property name="netbeans.autoupdate.country" value="US" />
     <property name="javafx.binarycss" value="false" />
     <property name="javac.test.classpath" value="D:\Program Files\Java\jdk1.8.0_221\jre/lib/javaws.jar:D:\Program Files\Java\jdk1.8.0_221\jre/lib/deploy.jar:D:\Program Files\Java\jdk1.8.0_221\jre/lib/plugin.jar:build/classes:D:\Program Files\NetBeans 8.2\platform\modules\ext\junit-4.12.jar:D:\Program Files\NetBeans 8.2\platform\modules\ext\hamcrest-core-1.3.jar" />
     <property name="manifest.custom.codebase" value="*" />
-    <property name="javac.includes" value="domains/farmer/FarmerGraphTest.java" />
+    <property name="javac.includes" value="domains/farmer/FarmerMoverTest.java" />
     <property name="ant.core.lib" value="D:\Program Files\NetBeans 8.2\extide\ant\lib\ant.jar" />
     <property name="javadoc.windowtitle" value="" />
     <property name="javafx.preloader.enabled" value="false" />
-    <property name="user.dir" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver" />
+    <property name="user.dir" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 9 - Graphs 2\ProblemSolver" />
     <property name="java.vm.version" value="25.221-b11" />
     <property name="libs.MySQLDriver.classpath" value="D:\Program Files\NetBeans 8.2\ide\modules\ext\mysql-connector-java-5.1.23-bin.jar" />
     <property name="libs.eclipselinkmodelgen.src" value="" />
@@ -31,7 +31,7 @@
     <property name="libs.hamcrest.classpath" value="D:\Program Files\NetBeans 8.2\platform\modules\ext\hamcrest-core-1.3.jar" />
     <property name="libs.javac-api.javadoc" value="" />
     <property name="os.name" value="Windows 10" />
-    <property name="test.class" value="domains.farmer.FarmerGraphTest" />
+    <property name="test.class" value="domains.farmer.FarmerMoverTest" />
     <property name="libs.beans-binding.classpath" value="D:\Program Files\NetBeans 8.2\java\modules\ext\beansbinding-1.2.1.jar" />
     <property name="ap.proc.none.internal" value="" />
     <property name="libs.JWSAntTasks.maven-pom" value="" />
@@ -46,7 +46,7 @@
     <property name="user.name" value="Mike" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner domains.farmer.FarmerGraphTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\build\test\results\TEST-domains.farmer.FarmerGraphTest.xml crashfile=D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\build\junitvmwatcher4185084385170635685.properties propsfile=D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\build\junit6595330210519283429.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner domains.farmer.FarmerMoverTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 9 - Graphs 2\ProblemSolver\build\test\results\TEST-domains.farmer.FarmerMoverTest.xml crashfile=D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 9 - Graphs 2\ProblemSolver\build\junitvmwatcher713945621842048906.properties propsfile=D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 9 - Graphs 2\ProblemSolver\build\junit7640634153640303874.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -66,7 +66,7 @@
     <property name="build.compiler.emacs" value="true" />
     <property name="javafx.deploy.includeDT" value="true" />
     <property name="java.endorsed.dirs" value="D:\Program Files\Java\jdk1.8.0_221\jre\lib\endorsed" />
-    <property name="test.includes" value="domains/farmer/FarmerGraphTest.java" />
+    <property name="test.includes" value="domains/farmer/FarmerMoverTest.java" />
     <property name="netbeans.dynamic.classpath" value="D:\Program Files\NetBeans 8.2\platform\core\asm-all-5.0.1.jar;D:\Program Files\NetBeans 8.2\platform\core\core-base.jar;D:\Program Files\NetBeans 8.2\platform\core\core.jar;D:\Program Files\NetBeans 8.2\platform\core\org-netbeans-libs-asm.jar;D:\Program Files\NetBeans 8.2\platform\core\org-openide-filesystems-compat8.jar;D:\Program Files\NetBeans 8.2\platform\core\org-openide-filesystems.jar;D:\Program Files\NetBeans 8.2\platform\core\locale\core-base_ja.jar;D:\Program Files\NetBeans 8.2\platform\core\locale\core-base_pt_BR.jar;D:\Program Files\NetBeans 8.2\platform\core\locale\core-base_ru.jar;D:\Program Files\NetBeans 8.2\platform\core\locale\core-base_zh_CN.jar;D:\Program Files\NetBeans 8.2\platform\core\locale\core_ja.jar;D:\Program Files\NetBeans 8.2\platform\core\locale\core_pt_BR.jar;D:\Program Files\NetBeans 8.2\platform\core\locale\core_ru.jar;D:\Program Files\NetBeans 8.2\platform\core\locale\core_zh_CN.jar;D:\Program Files\NetBeans 8.2\platform\core\locale\org-netbeans-libs-asm_ja.jar;D:\Program Files\NetBeans 8.2\platform\core\locale\org-netbeans-libs-asm_pt_BR.jar;D:\Program Files\NetBeans 8.2\platform\core\locale\org-netbeans-libs-asm_ru.jar;D:\Program Files\NetBeans 8.2\platform\core\locale\org-netbeans-libs-asm_zh_CN.jar;D:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems-compat8_ja.jar;D:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems-compat8_pt_BR.jar;D:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems-compat8_ru.jar;D:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems-compat8_zh_CN.jar;D:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_ja.jar;D:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_pt_BR.jar;D:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_ru.jar;D:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_zh_CN.jar;D:\Program Files\NetBeans 8.2\nb\core\org-netbeans-upgrader.jar;D:\Program Files\NetBeans 8.2\nb\core\locale\core_nb.jar;D:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_ja.jar;D:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_pt_BR.jar;D:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_ru.jar;D:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_zh_CN.jar;D:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_ja.jar;D:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_pt_BR.jar;D:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_ru.jar;D:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_zh_CN.jar" />
     <property name="jnlp.enabled" value="false" />
     <property name="java.vm.specification.version" value="1.8" />
@@ -81,7 +81,7 @@
     <property name="javac.debug" value="true" />
     <property name="javadoc.splitindex" value="true" />
     <property name="file.separator" value="\" />
-    <property name="javac.includesfile.binary" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\null1883934264" />
+    <property name="javac.includesfile.binary" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 9 - Graphs 2\ProblemSolver\null838112029" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="mkdist.disabled" value="false" />
     <property name="javac.test.processorpath" value="D:\Program Files\Java\jdk1.8.0_221\jre/lib/javaws.jar:D:\Program Files\Java\jdk1.8.0_221\jre/lib/deploy.jar:D:\Program Files\Java\jdk1.8.0_221\jre/lib/plugin.jar:build/classes:D:\Program Files\NetBeans 8.2\platform\modules\ext\junit-4.12.jar:D:\Program Files\NetBeans 8.2\platform\modules\ext\hamcrest-core-1.3.jar" />
@@ -93,7 +93,8 @@
     <property name="sun.java.launcher" value="SUN_STANDARD" />
     <property name="libs.hibernate4-persistencemodelgen.javadoc" value="" />
     <property name="libs.jaxb.javadoc" value="D:\Program Files\NetBeans 8.2\ide\docs\jaxb-api-doc.zip" />
-    <property name="javac.includes.binary" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\build\test\classes\domains\farmer\FarmerGraphTest.class" />
+    <property name="org.openide.awt.SwingBrowserImpl.do-not-block-awt" value="false" />
+    <property name="javac.includes.binary" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 9 - Graphs 2\ProblemSolver\build\test\classes\domains\farmer\FarmerMoverTest.class" />
     <property name="ant.home" value="D:\Program Files\NetBeans 8.2\extide\ant" />
     <property name="libs.junit_4.src" value="D:\Program Files\NetBeans 8.2\platform\docs\junit-4.12-sources.jar" />
     <property name="javafx.run.height" value="600" />
@@ -106,7 +107,7 @@
     <property name="libs.spring-framework400.src" value="" />
     <property name="libs.PostgreSQLDriver.src" value="" />
     <property name="sun.arch.data.model" value="64" />
-    <property name="basedir" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver" />
+    <property name="basedir" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 9 - Graphs 2\ProblemSolver" />
     <property name="libs.jpa20-persistence.maven-pom" value="" />
     <property name="jar.compress" value="false" />
     <property name="path.separator" value=";" />
@@ -144,7 +145,7 @@
     <property name="libs.JAXB-ENDORSED.javadoc" value="" />
     <property name="libs.JWSAntTasks.classpath" value="D:\Program Files\NetBeans 8.2\java\ant\extra\org-netbeans-modules-javawebstart-anttasks.jar" />
     <property name="libs.spring-framework300.src" value="" />
-    <property name="empty.dir" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\build\empty" />
+    <property name="empty.dir" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 9 - Graphs 2\ProblemSolver\build\empty" />
     <property name="javafx.deploy.backgroundupdate" value="false" />
     <property name="javafx.disable.concurrent.runs" value="false" />
     <property name="version-output" value="java version &quot;1.8" />
@@ -173,7 +174,7 @@
     <property name="libs.jpa2-persistence.maven-pom" value="" />
     <property name="annotation.processing.enabled.in.editor" value="false" />
     <property name="libs.hibernate4-support.classpath" value="D:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\antlr-2.7.7.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\c3p0-0.9.2.1.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-c3p0-4.3.1.Final.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\mchange-commons-java-0.2.3.4.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\dom4j-1.6.1.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\ehcache-core-2.4.3.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-ehcache-4.3.1.Final.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-core-4.3.1.Final.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\jboss-logging-3.1.3.GA.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-commons-annotations-4.0.4.Final.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-entitymanager-4.3.1.Final.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\javassist-3.18.1-GA.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\jboss-transaction-api_1.2_spec-1.0.0.Final.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\slf4j-api-1.6.1.jar;D:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\slf4j-simple-1.6.1.jar" />
-    <property name="ant.file.ProblemSolver" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\build.xml" />
+    <property name="ant.file.ProblemSolver" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 9 - Graphs 2\ProblemSolver\build.xml" />
     <property name="nb.native.filechooser" value="false" />
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
     <property name="javac.deprecation" value="false" />
@@ -182,7 +183,7 @@
     <property name="javac.processorpath" value="D:\Program Files\Java\jdk1.8.0_221\jre/lib/javaws.jar:D:\Program Files\Java\jdk1.8.0_221\jre/lib/deploy.jar:D:\Program Files\Java\jdk1.8.0_221\jre/lib/plugin.jar" />
     <property name="libs.hamcrest.maven-pom" value="" />
     <property name="javac.compilerargs" value="" />
-    <property name="ant.file" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\build.xml" />
+    <property name="ant.file" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 9 - Graphs 2\ProblemSolver\build.xml" />
     <property name="libs.beans-binding.maven-pom" value="" />
     <property name="libs.hibernate4-support.javadoc" value="D:\Program Files\NetBeans 8.2\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
     <property name="libs.beans-binding.src" value="" />
@@ -242,7 +243,7 @@
     <property name="libs.eclipselinkmodelgen.maven-pom" value="" />
     <property name="ant.file.type.jfx-impl" value="file" />
     <property name="libs.eclipselinkmodelgen.javadoc" value="" />
-    <property name="ant.file.jfx-impl" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\nbproject\jfx-impl.xml" />
+    <property name="ant.file.jfx-impl" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 9 - Graphs 2\ProblemSolver\nbproject\jfx-impl.xml" />
     <property name="netbeans.home+have.tests" value="true" />
     <property name="annotation.processing.processor.options" value="" />
     <property name="libs.testng.maven-pom" value="" />
@@ -251,7 +252,7 @@
     <property name="ant.file.type.ProblemSolver" value="file" />
     <property name="jdk.launcher.addexports.4" value="java.desktop/com.sun.java.swing.plaf.windows=ALL-UNNAMED" />
     <property name="jdk.launcher.addexports.3" value="java.desktop/sun.awt.im=ALL-UNNAMED" />
-    <property name="work.dir" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver" />
+    <property name="work.dir" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 9 - Graphs 2\ProblemSolver" />
     <property name="jdk.launcher.addexports.2" value="java.desktop/java.awt.peer=ALL-UNNAMED" />
     <property name="compile.on.save.unsupported.javafx" value="true" />
     <property name="libs.jaxb.classpath" value="D:\Program Files\NetBeans 8.2\ide\modules\ext\jaxb\jaxb-impl.jar;D:\Program Files\NetBeans 8.2\ide\modules\ext\jaxb\jaxb-xjc.jar;D:\Program Files\NetBeans 8.2\ide\modules\ext\jaxb\jaxb1-impl.jar;D:\Program Files\NetBeans 8.2\ide\modules\ext\jaxb\activation.jar;D:\Program Files\NetBeans 8.2\ide\modules\ext\jaxb\api\jaxb-api.jar;D:\Program Files\NetBeans 8.2\ide\modules\ext\jaxb\api\jsr173_1.0_api.jar" />
@@ -270,9 +271,9 @@
     <property name="nb.junit.batch" value="true" />
     <property name="junit.forkmode" value="perTest" />
     <property name="sun.boot.class.path" value="D:\Program Files\Java\jdk1.8.0_221\jre\lib\resources.jar;D:\Program Files\Java\jdk1.8.0_221\jre\lib\rt.jar;D:\Program Files\Java\jdk1.8.0_221\jre\lib\sunrsasign.jar;D:\Program Files\Java\jdk1.8.0_221\jre\lib\jsse.jar;D:\Program Files\Java\jdk1.8.0_221\jre\lib\jce.jar;D:\Program Files\Java\jdk1.8.0_221\jre\lib\charsets.jar;D:\Program Files\Java\jdk1.8.0_221\jre\lib\jfr.jar;D:\Program Files\Java\jdk1.8.0_221\jre\classes" />
-    <property name="ant.file.ProblemSolver-impl" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\nbproject\build-impl.xml" />
+    <property name="ant.file.ProblemSolver-impl" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 9 - Graphs 2\ProblemSolver\nbproject\build-impl.xml" />
     <property name="javac.target" value="1.8" />
-    <property name="built-jar.properties" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\build\built-jar.properties" />
+    <property name="built-jar.properties" value="D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 9 - Graphs 2\ProblemSolver\build\built-jar.properties" />
     <property name="build.test.classes.dir" value="build/test/classes" />
     <property name="src.dir" value="src" />
     <property name="annotation.processing.enabled" value="true" />
@@ -289,8 +290,8 @@
     <property name="debug-transport-by-os" value="dt_shmem" />
     <property name="libs.MySQLDriver.src" value="" />
     <property name="sun.jnu.encoding" value="Cp1252" />
-    <property name="build.test.results.dir" value="build/test/results" />
     <property name="java.runtime.version" value="1.8.0_221-b11" />
+    <property name="build.test.results.dir" value="build/test/results" />
     <property name="default.javac.target" value="1.8" />
     <property name="libs.junit_4.classpath" value="D:\Program Files\NetBeans 8.2\platform\modules\ext\junit-4.12.jar" />
     <property name="user.timezone" value="" />
@@ -304,7 +305,7 @@
     <property name="excludes" value="" />
     <property name="libs.jpa2-persistence.javadoc" value="D:\Program Files\NetBeans 8.2\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
     <property name="apple.laf.useScreenMenuBar" value="true" />
-    <property name="java.class.path" value="D:\Program Files\Java\jdk1.8.0_221\jre\lib\javaws.jar;D:\Program Files\Java\jdk1.8.0_221\jre\lib\deploy.jar;D:\Program Files\Java\jdk1.8.0_221\jre\lib\plugin.jar;D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\build\classes;D:\Program Files\NetBeans 8.2\platform\modules\ext\junit-4.12.jar;D:\Program Files\NetBeans 8.2\platform\modules\ext\hamcrest-core-1.3.jar;D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 8 - Graphs\ProblemSolver\build\test\classes;D:\Program Files\NetBeans 8.2\extide\ant\lib\ant-launcher.jar;D:\Program Files\NetBeans 8.2\extide\ant\lib\ant.jar;D:\Program Files\NetBeans 8.2\extide\ant\lib\ant-junit.jar;D:\Program Files\NetBeans 8.2\extide\ant\lib\ant-junit4.jar" />
+    <property name="java.class.path" value="D:\Program Files\Java\jdk1.8.0_221\jre\lib\javaws.jar;D:\Program Files\Java\jdk1.8.0_221\jre\lib\deploy.jar;D:\Program Files\Java\jdk1.8.0_221\jre\lib\plugin.jar;D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 9 - Graphs 2\ProblemSolver\build\classes;D:\Program Files\NetBeans 8.2\platform\modules\ext\junit-4.12.jar;D:\Program Files\NetBeans 8.2\platform\modules\ext\hamcrest-core-1.3.jar;D:\Documents\NetBeansProjects\SoftwareAnalysis\Labs\lab 9 - Graphs 2\ProblemSolver\build\test\classes;D:\Program Files\NetBeans 8.2\extide\ant\lib\ant-launcher.jar;D:\Program Files\NetBeans 8.2\extide\ant\lib\ant.jar;D:\Program Files\NetBeans 8.2\extide\ant\lib\ant-junit.jar;D:\Program Files\NetBeans 8.2\extide\ant\lib\ant-junit4.jar" />
     <property name="libs.absolutelayout.src" value="" />
     <property name="libs.jpa20-persistence.classpath" value="D:\Program Files\NetBeans 8.2\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar" />
     <property name="os.version" value="10.0" />
@@ -334,8 +335,8 @@
     <property name="libs.hibernate4-persistencemodelgen.classpath" value="D:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-jpamodelgen-4.3.1.Final.jar" />
     <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
     <property name="main.class" value="com.javafx.main.Main" />
-    <property name="libs.CopyLibs.src" value="" />
     <property name="build.dir" value="build" />
+    <property name="libs.CopyLibs.src" value="" />
     <property name="ant.version" value="Apache Ant(TM) version 1.9.7 compiled on April 9 2016" />
     <property name="file.encoding" value="Cp1252" />
     <property name="build.classes.excludes" value="**/*.java,**/*.form" />
@@ -344,53 +345,30 @@
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
   </properties>
-  <testcase classname="domains.farmer.FarmerGraphTest" name="testBFS1" time="0.034">
-    <error message="Error in search. No such vertex:    |  |   &#xa; F |  |   &#xa; W |  |   &#xa; G |  |   &#xa; C |  |   &#xa;   |  |   " type="java.lang.RuntimeException">java.lang.RuntimeException: Error in search. No such vertex:    |  |   
- F |  |   
- W |  |   
- G |  |   
- C |  |   
-   |  |   
-	at framework.graph.GraphSearcher.search(GraphSearcher.java:58)
-	at framework.graph.GraphSearcher.breadthFirstSearch(GraphSearcher.java:37)
-	at domains.farmer.FarmerGraphTest.testBFS1(FarmerGraphTest.java:24)
-</error>
+  <testcase classname="domains.farmer.FarmerMoverTest" name="testGoesAlone" time="0.004">
+    <failure type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError
+	at domains.farmer.FarmerMoverTest.doMoveLegal(FarmerMoverTest.java:105)
+	at domains.farmer.FarmerMoverTest.testGoesAlone(FarmerMoverTest.java:54)
+</failure>
   </testcase>
-  <testcase classname="domains.farmer.FarmerGraphTest" name="testBFS2" time="0.0">
-    <error message="Error in search. No such vertex:    |  |   &#xa;   |  | F &#xa;   |  | W &#xa;   |  | G &#xa;   |  | C &#xa;   |  |   " type="java.lang.RuntimeException">java.lang.RuntimeException: Error in search. No such vertex:    |  |   
-   |  | F 
-   |  | W 
-   |  | G 
-   |  | C 
-   |  |   
-	at framework.graph.GraphSearcher.search(GraphSearcher.java:58)
-	at framework.graph.GraphSearcher.breadthFirstSearch(GraphSearcher.java:37)
-	at domains.farmer.FarmerGraphTest.testBFS2(FarmerGraphTest.java:32)
-</error>
+  <testcase classname="domains.farmer.FarmerMoverTest" name="testTakesGoat" time="0.0">
+    <failure type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError
+	at domains.farmer.FarmerMoverTest.doMoveLegal(FarmerMoverTest.java:105)
+	at domains.farmer.FarmerMoverTest.testTakesGoat(FarmerMoverTest.java:75)
+</failure>
   </testcase>
-  <testcase classname="domains.farmer.FarmerGraphTest" name="testDFS1" time="0.001">
-    <error message="Error in search. No such vertex:    |  |   &#xa; F |  |   &#xa; W |  |   &#xa; G |  |   &#xa; C |  |   &#xa;   |  |   " type="java.lang.RuntimeException">java.lang.RuntimeException: Error in search. No such vertex:    |  |   
- F |  |   
- W |  |   
- G |  |   
- C |  |   
-   |  |   
-	at framework.graph.GraphSearcher.search(GraphSearcher.java:58)
-	at framework.graph.GraphSearcher.depthFirstSearch(GraphSearcher.java:46)
-	at domains.farmer.FarmerGraphTest.testDFS1(FarmerGraphTest.java:40)
-</error>
+  <testcase classname="domains.farmer.FarmerMoverTest" name="testTakesWolf" time="0.001">
+    <failure type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError
+	at domains.farmer.FarmerMoverTest.doMoveLegal(FarmerMoverTest.java:105)
+	at domains.farmer.FarmerMoverTest.testTakesWolf(FarmerMoverTest.java:64)
+</failure>
   </testcase>
-  <testcase classname="domains.farmer.FarmerGraphTest" name="testDFS2" time="0.001">
-    <error message="Error in search. No such vertex:    |  |   &#xa;   |  | F &#xa;   |  | W &#xa;   |  | G &#xa;   |  | C &#xa;   |  |   " type="java.lang.RuntimeException">java.lang.RuntimeException: Error in search. No such vertex:    |  |   
-   |  | F 
-   |  | W 
-   |  | G 
-   |  | C 
-   |  |   
-	at framework.graph.GraphSearcher.search(GraphSearcher.java:58)
-	at framework.graph.GraphSearcher.depthFirstSearch(GraphSearcher.java:46)
-	at domains.farmer.FarmerGraphTest.testDFS2(FarmerGraphTest.java:48)
-</error>
+  <testcase classname="domains.farmer.FarmerMoverTest" name="testNameLegality" time="0.0" />
+  <testcase classname="domains.farmer.FarmerMoverTest" name="testTakesCabbage" time="0.0">
+    <failure type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError
+	at domains.farmer.FarmerMoverTest.doMoveLegal(FarmerMoverTest.java:105)
+	at domains.farmer.FarmerMoverTest.testTakesCabbage(FarmerMoverTest.java:86)
+</failure>
   </testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
