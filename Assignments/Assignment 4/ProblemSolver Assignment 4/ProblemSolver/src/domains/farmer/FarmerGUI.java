@@ -19,7 +19,7 @@ public class FarmerGUI extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        Scene scene = new Scene(new ProblemGUI(new FarmerProblem(), 600, 750));
+        Scene scene = new Scene(new ProblemGUI(new FarmerProblem(), 900, 750));
 	primaryStage.setTitle("Testing FWGC GUI");
 	primaryStage.setScene(scene);
 	primaryStage.show();
