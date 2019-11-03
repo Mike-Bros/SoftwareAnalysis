@@ -35,14 +35,7 @@ public class PuzzleProblem extends Problem {
               + "There is one blank space that holds no tile.  A legal move "
               + "consists of sliding a tile into the blank space if the tile is "
               + "adjacent to it. The goal is to move tiles around until the board "
-              + "looks like the final state below.\n\n"
-              + "+---+---+---+\n" 
-              + "| 1 | 2 | 3 |\n" 
-              + "+---+---+---+\n" 
-              + "| 8 |   | 4 |\n" 
-              + "+---+---+---+\n" 
-              + "| 7 | 6 | 5 |\n" 
-              + "+---+---+---+";
+              + "looks like the final state below.\n\n";
     }
     
 

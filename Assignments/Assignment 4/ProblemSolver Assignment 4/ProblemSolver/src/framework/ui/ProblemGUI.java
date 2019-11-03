@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package framework.ui;
 
 import framework.problem.Problem;
@@ -42,6 +37,12 @@ public class ProblemGUI extends VBox{
     private VBox finalState;
     private Button reset;
     
+    /**
+     * Creates a ProblemGUI with given problem, width, and height
+     * @param problem problem to make window for
+     * @param width the window width
+     * @param height the window height
+     */
     public ProblemGUI(Problem problem, double width, double height) {
         this.problem = problem;
         this.width = width;
@@ -49,19 +50,18 @@ public class ProblemGUI extends VBox{
         this.setSpacing(15);
         solver = new SolvingAssistant(problem);
         setWindowProperties();
-        
-        setReset();
+        status = new Label(" ");
         
         updateDisplay();
     }
     
+    // Private helper methods follow
+    
     private void updateDisplay(){
         super.getChildren().clear();
-        
+        setReset();
         setWelcome();
         setIntro();
-        setStatus();
-        
         
         currentState = setState("Current State:\n",true);
         finalState = setState("  Final State:  \n",false);
@@ -167,13 +167,14 @@ public class ProblemGUI extends VBox{
     }
 
     private void doMove() {
-        if(solver.isMoveLegal()){
-            updateDisplay();
-        }
+        updateDisplay();
+        setStatus();
     }
 
     private void setStatus() {
-        if(solver.isProblemSolved()){
+        if(!solver.isMoveLegal()&&solver.getMoveCount()!=0){
+            status = new Label("Illegal move. Try again.");
+        }else if(solver.isProblemSolved()){
             status = new Label("You solved the problem. Congratulations.");
         }else{
             status = new Label(" ");
@@ -194,6 +195,4 @@ public class ProblemGUI extends VBox{
         solver.reset();
         updateDisplay();
     }
-
-    
 }
