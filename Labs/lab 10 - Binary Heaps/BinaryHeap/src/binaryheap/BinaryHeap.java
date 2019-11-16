@@ -80,11 +80,39 @@ public class BinaryHeap<E> extends ArrayList<E> implements Queue<E> {
      */
     @Override
     public boolean add(E element) {
-
-	/* You must provide */
-	
+        //Increase size of array by 1
+        this.ensureCapacity(size()+1);
+        
+        
+        //create index variable at end of the array
+        //used to keep track of where element is trying to be placed
+        int indexE = size();
+        Boolean repeat = true;
+        
+        //repeat until element has been added to the ArrayList
+        while(repeat){
+            //canAdd will return true if adding element at indexE
+            //will keep the tree balanced
+            if(canAdd(element,indexE)){
+                //set the element to indexE and break out of the loop
+                set(indexE,element);
+                repeat = false;
+                //increase modCount
+                modCount++;
+            }else{
+                //swap the parent E into the indexE position
+                set(indexE,get(indexE/2));
+                //increase modCount
+                modCount++;
+                //Change index to the parent node to try canAdd() again
+                indexE= indexE/2;
+            }
+            
+        }
+        
         return true;
     }
+        
 
     /**
      * Removes an element from the root of this binary heap.  After removal,
@@ -96,10 +124,26 @@ public class BinaryHeap<E> extends ArrayList<E> implements Queue<E> {
      */
     @Override
     public E remove() {
-
-        /* You must provide */
+        E removed = this.remove();
+        Boolean repeat = true;
+        int index = 0;
+       //set as last right-most node
+       set(index,get(size()));
+       
+       while(repeat){
+           //if index node has smaller children
+           if(hasSmaller(index)){
+                //find smallest child of index node
+                //and swap index with smaller child node
+                smallestChild(index);
+                
+           }//else end loop
+           else{
+               repeat = false;
+           }
+       }
 	
-        return null;    
+        return removed;    
     }
 
     /**
@@ -132,4 +176,55 @@ public class BinaryHeap<E> extends ArrayList<E> implements Queue<E> {
     public E peek() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+
+    private boolean canAdd(E element,int indexE) {
+        //if empty, E can be added
+        //compare() returns...
+        // -1 if element is less than parent
+        // 0 if elemebet is equal to parent
+        // 1 if element is greater than parent
+        // -1 return false
+        // 0 return true
+        // 1 return true
+        
+        if(this.isEmpty()){
+            return true;
+        }else if(0 >= this.comp.compare(element, get(indexE/2))){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    private boolean hasSmaller(int index) {
+        //if index has no children return false
+        if(index>=size()){
+            return false;
+        }
+        //if left or right child is smaller return true
+        if((-1 == this.comp.compare(get(index*2), get(index))) || -1 == this.comp.compare(get(index*2+1), get(index))){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    private void smallestChild(int index) {
+        E temp;
+        //if left child is smaller swap with index
+        if(0 >= this.comp.compare(get(index*2), get(index*2+1))){
+            temp = get(index);
+            set(index,get(index*2));
+            set(index*2,temp);
+            modCount++;
+        }//else if right child is smaller swap with index
+        else if(0 >= this.comp.compare(get(index*2+1), get(index*2))){
+            temp = get(index);
+            set(index,get(index*2+1));
+            set(index*2+1,temp);
+            modCount++;
+        }
+    }
+
+   
 }
