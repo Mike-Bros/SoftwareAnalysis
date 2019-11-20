@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#915d54</color>
+    <color name="colorPrimaryDark">#5b3a35</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="minOrange">#e59765</color>
+    <color name="minClay">#b6756a</color>
+    <color name="minBrick">#a96161</color>
+    <color name="minLavender">#7f5a7b</color>
+    <color name="minEggplant">#523d6d</color>
+    <color name="minText">#6aabb6</color>
+</resources>
