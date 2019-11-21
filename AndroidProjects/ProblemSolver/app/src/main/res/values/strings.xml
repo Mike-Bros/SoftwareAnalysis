@@ -7,7 +7,7 @@
     <string name="puzzleWelcome">Welcome to the 8-Puzzle Problem</string>
     <string name="farmerBegin">Begin FWGC Problem</string>
     <string name="puzzleBegin">Begin 8-Puzzle Problem</string>
-    <string name="farmerIntro1">A farmer and his wold, goat, and cabbage come to the edge of a river they wish to cross:</string>
-    <string name="farmerIntro2">There is a boat at the river\'s edge that only the farmer can row. The farmer can take at most one other object besides himself on a crossing, but if the wold is ever left with the goat,  the wolf will eat the goat, similarly, if the goat is left with the cabbage, the goal will eat the cabbage. Devise a sequence of the crossing of the river so that all four character arrive safely on the other side:</string>
+    <string name="farmerIntro1">A farmer and his wolf, goat, and cabbage come to the edge of a river they wish to cross:</string>
+    <string name="farmerIntro2">There is a boat at the river\'s edge that only the farmer can row. The farmer can take at most one other object besides himself on a crossing, but if the wolf is ever left with the goat, the wolf will eat the goat, similarly, if the goat is left with the cabbage, the goat will eat the cabbage. Devise a sequence of the crossing of the river so that all four character arrive safely on the other side:</string>
     <string name="mainChoose">Please choose a problem:</string>
 </resources>
