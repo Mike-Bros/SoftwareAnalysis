@@ -1,13 +1,14 @@
 package com.example.problemsolver;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import domains.farmer.FarmerProblem;
 
-public class FarmerIntroActivity extends Activity {
+public class FarmerIntroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         FarmerProblem farmerProblem = new FarmerProblem();

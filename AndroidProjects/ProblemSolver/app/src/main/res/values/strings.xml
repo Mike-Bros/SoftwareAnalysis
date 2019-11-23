@@ -10,4 +10,6 @@
     <string name="farmerIntro1">A farmer and his wolf, goat, and cabbage come to the edge of a river they wish to cross:</string>
     <string name="farmerIntro2">There is a boat at the river\'s edge that only the farmer can row. The farmer can take at most one other object besides himself on a crossing, but if the wolf is ever left with the goat, the wolf will eat the goat, similarly, if the goat is left with the cabbage, the goat will eat the cabbage. Devise a sequence of the crossing of the river so that all four character arrive safely on the other side:</string>
     <string name="mainChoose">Please choose a problem:</string>
+    <string name="puzzleIntro1">You are given a board in which numbered tiles can slide around. There is one blank space that holds no tile. Here is an example:</string>
+    <string name="puzzleIntro2">A legal move consists of sliding a tile into the blank space if the tile is adjacent to it. The goal is to move tiles around until the board looks like the this:</string>
 </resources>

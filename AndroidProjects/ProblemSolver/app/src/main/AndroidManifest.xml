@@ -16,13 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".FarmerIntroActivity"
-            android:label="@string/app_name">
+
+        <activity android:name=".FarmerIntroActivity"
+            android:parentActivityName=".MainActivity">
         </activity>
-        <activity
-            android:name=".PuzzleIntroActivity"
-            android:label="@string/app_name">
+        <activity android:name=".PuzzleIntroActivity"
+            android:parentActivityName=".MainActivity">
         </activity>
     </application>
 
