@@ -7,12 +7,30 @@ function PuzzleState(tiles) {
     var inbetween = " | ";
 
     this.toString = function() {
+        //top line
         var buf = seperator;
-        buf += makeLine(0);
+        buf += left;
+        for(var j=0;j<3;j++){
+            buf += this.tiles[0][j];
+            if(j<2)buf += inbetween;
+        }
+        buf += right;
+        //middle line
         buf += seperator;
-        buf += makeLine(1);
+        buf += left;
+        for(var j=0;j<3;j++){
+            buf += this.tiles[1][j];
+            if(j<2)buf += inbetween;
+        }
+        buf += right;
+        //bottom line
         buf += seperator;
-        buf += makeLine(2);
+        buf += left;
+        for(var j=0;j<3;j++){
+            buf += this.tiles[2][j];
+            if(j<2)buf += inbetween;
+        }
+        buf += right;
         buf += seperator;
         return buf;
     };
@@ -26,24 +44,25 @@ function PuzzleState(tiles) {
         }
     };
 
-    // Other properties and methods here
-
     this.makeCanvas = function() {
 	return this.makeDefaultCanvas(this);
     };
     
-    makeLine = function(i){
-        var buf = left;
-        for(var j=0;j<3;j++){
-            buf += tiles[i][j];
-            if(j<2)buf += inbetween;
+    this.getLocation = function(tile) {
+        var r;
+        var c;
+        
+        for(var i=0;i<3;i++){
+            for(var j=0;j<3;j++){
+                //if tile === this.tiles[i][j] save r and c to be returned
+                if(tile === this.tiles[i][j]){
+                    r = i;
+                    c = j;
+                }
+            }
         }
-        buf += right;
-        return buf;
+        return {row: r, column: c};
     };
-    
 }
 
 PuzzleState.prototype = STATE_PROTO;
-
-

@@ -20,3 +20,12 @@ assert("!goal.equals(start)");
 assert("!start.equals(slide6)");
 assert("goal.equals(goal)");
 assert("start.equals(startCopy)");
+
+displayText("Here is the location of 2 in start:");
+displayText(start.getLocation(2).row.toString()+","+start.getLocation(2).column.toString());
+
+displayText("Here is the location of 4 in start:");
+displayText(start.getLocation(4).row.toString()+","+start.getLocation(4).column.toString());
+
+displayText("Here is the location of 5 in start:");
+displayText(start.getLocation(5).row.toString()+","+start.getLocation(5).column.toString());
