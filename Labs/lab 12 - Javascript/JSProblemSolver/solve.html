@@ -11,15 +11,18 @@
     <script src="js/framework/problem/State.js"></script>
     <script src="js/domains/farmer/FarmerState.js"></script>
     <script src="js/domains/waterjug/WaterJugState.js"></script>
+    <script src="js/domains/puzzle/PuzzleState.js"></script>
 
     <script src="js/framework/utils/Map.js"></script>
     <script src="js/framework/problem/Mover.js"></script>
     <script src="js/domains/farmer/FarmerMover.js"></script>
     <script src="js/domains/waterjug/WaterJugMover.js"></script>
+    <script src="js/domains/puzzle/PuzzleMover.js"></script>
 
     <script src="js/framework/problem/Problem.js"></script>
     <script src="js/domains/farmer/FarmerProblem.js"></script>
     <script src="js/domains/waterjug/WaterJugProblem.js"></script>
+    <script src="js/domains/puzzle/PuzzleProblem.js"></script>
 
     <script src="js/framework/solution/SolvingAssistant.js"></script>
 
@@ -29,7 +32,7 @@
 
     <script>
       window.onload = function() {
-         var problems = [new FarmerProblem(), new WaterJugProblem()];
+         var problems = [new FarmerProblem(), new WaterJugProblem(), new PuzzleProblem()];
          var chooser = new Chooser(problems);
          $("body").append(chooser.select);
       };
