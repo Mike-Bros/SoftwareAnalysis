@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/farmerCurrentState"
+        android:id="@+id/farmerGoalState"
         android:layout_width="120dp"
         android:layout_height="140dp"
         android:layout_marginTop="32dp"
@@ -47,7 +47,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <TextView
-        android:id="@+id/farmerGoalState"
+        android:id="@+id/farmerCurrentState"
         android:layout_width="120dp"
         android:layout_height="140dp"
         android:layout_marginStart="24dp"
@@ -56,7 +56,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:fontFamily="monospace"
-        app:layout_constraintBaseline_toBaselineOf="@+id/farmerCurrentState"
+        app:layout_constraintBaseline_toBaselineOf="@+id/farmerGoalState"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -85,5 +85,195 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toEndOf="@+id/farmerGoalState"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <Button
+        android:id="@+id/goesAlon"
+
+        android:layout_width="180dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="8dp"
+
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_top_buttonshape"
+        android:onClick="tryGoesAlone"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="@string/farmerMove1"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/farmerGoalState" />
+
+    <Button
+        android:id="@+id/takesWolf"
+
+        android:layout_width="180dp"
+        android:layout_height="54dp"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_top_buttonshape"
+        android:onClick="tryTakesWolf"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="@string/farmerMove2"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goesAlon" />
+
+    <Button
+        android:id="@+id/reset"
+
+        android:layout_width="140dp"
+        android:layout_height="54dp"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/rounded_top_buttonshape"
+        android:onClick="reset"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="@string/reset"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feedback" />
+
+    <Button
+        android:id="@+id/takesGoat"
+
+        android:layout_width="180dp"
+        android:layout_height="54dp"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_top_buttonshape"
+        android:onClick="tryTakesGoat"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="@string/farmerMove3"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/takesWolf" />
+
+    <Button
+        android:id="@+id/takesCabbage"
+
+        android:layout_width="180dp"
+        android:layout_height="54dp"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_top_buttonshape"
+        android:onClick="tryTakesCabbage"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="@string/farmerMove4"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/takesGoat" />
+
+    <TextView
+        android:id="@+id/feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/goesAlon"
+        app:layout_constraintTop_toBottomOf="@+id/farmerCurrentState" />
+
+    <Button
+        android:id="@+id/next"
+
+        android:layout_width="140dp"
+        android:layout_height="54dp"
+
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/rounded_top_buttonshape"
+        android:onClick="next"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="@string/next"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/solve" />
+
+    <Button
+        android:id="@+id/solve"
+
+        android:layout_width="140dp"
+        android:layout_height="54dp"
+        android:enabled="false"
+
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/rounded_top_buttonshape"
+        android:onClick="solve"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="@string/solve"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reset" />
+
+    <TextView
+        android:id="@+id/stats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/takesCabbage" />
+
+    <Spinner
+        android:id="@+id/benchmarks"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:spinnerMode="dropdown"
+        android:text="@string/benchmarks"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/benchmarks"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/next" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

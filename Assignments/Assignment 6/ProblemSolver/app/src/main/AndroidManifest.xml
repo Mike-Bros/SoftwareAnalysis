@@ -27,6 +27,9 @@
         <activity android:name=".PuzzleIntroActivity"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity android:name=".PuzzleMainActivity"
+            android:parentActivityName=".PuzzleIntroActivity">
+        </activity>
     </application>
 
 </manifest>

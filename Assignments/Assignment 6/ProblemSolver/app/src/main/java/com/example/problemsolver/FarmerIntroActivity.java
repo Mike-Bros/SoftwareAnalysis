@@ -10,13 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import domains.farmer.FarmerProblem;
 
 public class FarmerIntroActivity extends AppCompatActivity {
-    int numMoves;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         FarmerProblem farmerProblem = new FarmerProblem();
         String initialState = farmerProblem.getInitialState().toString();
         String finalState = farmerProblem.getFinalState().toString();
-        numMoves = 0;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_farmer_intro);
@@ -28,10 +26,6 @@ public class FarmerIntroActivity extends AppCompatActivity {
         TextView finalStateView = findViewById(R.id.farmerFinalState);
         finalStateView.setText(finalState);
         finalStateView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-
-        TextView moves = findViewById(R.id.movesView);
-        moves.setText(String.valueOf(numMoves));
-
     }
 
 

@@ -15,4 +15,23 @@
     <string name="currentState">Current State</string>
     <string name="goalState">Goal State</string>
     <string name="moves">Moves</string>
+    <string name="farmerMove1">Goes Alone</string>
+    <string name="farmerMove2">Takes Wolf</string>
+    <string name="farmerMove3">Takes Goat</string>
+    <string name="farmerMove4">Takes Cabbage</string>
+    <string name="reset">Reset</string>
+    <string name="illegal">Illegal Move</string>
+    <string name="congrats">Congratulations</string>
+    <string name="blank"></string>
+    <string name="puzzleSlide1">Slide Tile 1</string>
+    <string name="puzzleSlide2">Slide Tile 2</string>
+    <string name="puzzleSlide3">Slide Tile 3</string>
+    <string name="puzzleSlide4">Slide Tile 4</string>
+    <string name="puzzleSlide5">Slide Tile 5</string>
+    <string name="puzzleSlide6">Slide Tile 6</string>
+    <string name="puzzleSlide7">Slide Tile 7</string>
+    <string name="puzzleSlide8">Slide Tile 8</string>
+    <string name="solve">Solve</string>
+    <string name="next">Next</string>
+    <string name="benchmarks">Benchmarks</string>
 </resources>

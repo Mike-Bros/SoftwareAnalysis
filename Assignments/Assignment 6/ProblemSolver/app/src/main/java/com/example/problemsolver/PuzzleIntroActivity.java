@@ -1,5 +1,6 @@
 package com.example.problemsolver;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -28,5 +29,9 @@ public class PuzzleIntroActivity extends AppCompatActivity {
         TextView finalStateView = findViewById(R.id.puzzleFinalState);
         finalStateView.setText(finalState);
         finalStateView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+
+    }
+    public void onPuzzleBeginClick(View view) {
+        startActivity(new Intent(PuzzleIntroActivity.this, PuzzleMainActivity.class));
     }
 }

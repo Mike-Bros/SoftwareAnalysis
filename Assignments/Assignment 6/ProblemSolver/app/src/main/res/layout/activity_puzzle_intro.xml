@@ -87,6 +87,7 @@
         android:layout_width="266dp"
         android:layout_height="94dp"
         android:background="@drawable/rounded_top_buttonshape"
+        android:onClick="onPuzzleBeginClick"
 
         android:shadowColor="#A8A8A8"
         android:shadowDx="0"
